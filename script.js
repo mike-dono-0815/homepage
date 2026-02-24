@@ -44,56 +44,6 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
 
-/* ── PUBLICATION FILTER ─────────────────────────────── */
-const pubSearch  = document.getElementById('pubSearch');
-const filterBtns = document.querySelectorAll('.filter-btn');
-const pubItems   = document.querySelectorAll('.pub-item');
-const pubGroups  = document.querySelectorAll('.pub-group');
-const noResults  = document.getElementById('pubNoResults');
-
-let activeFilter = 'all';
-let searchQuery  = '';
-
-function applyPubFilter() {
-  pubItems.forEach(item => {
-    const decade  = item.getAttribute('data-decade') || '';
-    const isAward = item.getAttribute('data-award') === 'true';
-    const text    = item.textContent.toLowerCase();
-
-    const decadeOk =
-      activeFilter === 'all'  ||
-      activeFilter === decade ||
-      (activeFilter === 'award' && isAward);
-
-    const searchOk = searchQuery === '' || text.includes(searchQuery);
-
-    item.style.display = decadeOk && searchOk ? '' : 'none';
-  });
-
-  // Hide year-group headers when no visible items underneath
-  let totalVisible = 0;
-  pubGroups.forEach(group => {
-    const visible = group.querySelectorAll('.pub-item:not([style*="display: none"])').length;
-    group.style.display = visible > 0 ? '' : 'none';
-    totalVisible += visible;
-  });
-
-  noResults.style.display = totalVisible === 0 ? '' : 'none';
-}
-
-pubSearch.addEventListener('input', e => {
-  searchQuery = e.target.value.toLowerCase().trim();
-  applyPubFilter();
-});
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeFilter = btn.getAttribute('data-filter');
-    applyPubFilter();
-  });
-});
 
 /* ── SCROLL-REVEAL (CSS-free, minimal) ──────────────── */
 if ('IntersectionObserver' in window) {
