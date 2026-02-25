@@ -730,6 +730,16 @@ section { padding: 5rem 0; }
   min-width: 200px;
   line-height: 1.45;
 }
+.tp-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: color var(--transition), border-color var(--transition);
+}
+.tp-title a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
 
 .tp-abstract {
   flex-basis: 100%;
@@ -756,10 +766,8 @@ section { padding: 5rem 0; }
   .scholar-panel { padding: 1.5rem; }
   .scholar-sep { display: none; }
   .scholar-metric { min-width: 100px; padding-right: 0; }
-  .conf-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 380px) {
   .conf-grid { grid-template-columns: 1fr; }
+  .conf-card { padding: 1rem 1.25rem; gap: 0.35rem; }
 }
 
 /* ── AWARDS ───────────────────────────────────────────── */
@@ -796,6 +804,8 @@ section { padding: 5rem 0; }
 .award-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
 .award-card h3 { font-size: 0.92rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.4rem; }
 .award-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+.award-photo-link { font-size: 0.78rem; color: var(--gold); text-decoration: none; margin-top: 0.4rem; display: inline-block; }
+.award-photo-link:hover { text-decoration: underline; }
 
 .team-awards-box {
   background: var(--gold-pale);
@@ -868,15 +878,21 @@ section { padding: 5rem 0; }
   margin-bottom: 0.35rem;
 }
 .pillar-links a {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
   font-size: 0.78rem;
   color: var(--gold-light);
-  opacity: 0.7;
+  opacity: 0.75;
   text-decoration: none;
   line-height: 1.5;
-  transition: opacity var(--transition);
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: opacity var(--transition), padding-left var(--transition);
 }
-.pillar-links a:hover { opacity: 1; text-decoration: underline; }
+.pillar-links a:last-child { border-bottom: none; }
+.pillar-links a::before { content: "↗"; font-size: 0.7rem; flex-shrink: 0; opacity: 0.6; }
+.pillar-links a:hover { opacity: 1; text-decoration: none; padding-left: 0.3rem; }
 
 /* ── GITHUB / PROJECTS ────────────────────────────────── */
 #github { padding-bottom: 5rem; background: var(--gray-50); }
@@ -915,11 +931,10 @@ section { padding: 5rem 0; }
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
-  padding: 1.25rem;
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  overflow: hidden;
   transition: all var(--transition);
 }
 .repo-card:hover {
@@ -928,6 +943,28 @@ section { padding: 5rem 0; }
   text-decoration: none;
   transform: translateY(-2px);
   box-shadow: var(--shadow);
+}
+.repo-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+.repo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.repo-card:hover .repo-thumb img {
+  transform: scale(1.04);
+}
+.repo-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 .repo-header { display: flex; align-items: center; justify-content: space-between; }
 .repo-icon { font-size: 1.4rem; }
