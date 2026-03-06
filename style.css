@@ -978,6 +978,20 @@ section { padding: 5rem 0; }
 }
 .repo-card h3 { font-size: 0.92rem; font-weight: 600; color: var(--gray-800); }
 .repo-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+.repo-visibility {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+}
+.repo-visibility.public {
+  color: #2a9d5c;
+  background: rgba(42,157,92,0.12);
+}
+.repo-visibility.private {
+  color: var(--text-muted);
+  background: rgba(120,120,140,0.12);
+}
 
 /* ── CONTACT ──────────────────────────────────────────── */
 #contact { }
