@@ -830,6 +830,7 @@ section { padding: 5rem 0; }
 .blog-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
+  border-left: 3px solid var(--gold);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   display: flex;
@@ -848,6 +849,28 @@ section { padding: 5rem 0; }
   color: var(--gold);
   margin-bottom: 0.75rem;
 }
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.blog-card-meta .blog-tag { margin-bottom: 0; }
+.blog-read-time {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--gray-100);
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.blog-card--medium {
+  border-left: 3px solid #02b875;
+}
+.blog-card--medium:hover { border-color: #02b875; }
+.blog-card--medium .blog-tag { color: #02b875; }
+.blog-card--medium .blog-footer a { color: #02b875; }
 .blog-card h3 { font-size: 0.98rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.6rem; line-height: 1.4; }
 .blog-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
 .blog-footer {
@@ -989,6 +1012,21 @@ section { padding: 5rem 0; }
   background: rgba(42,157,92,0.12);
 }
 .repo-visibility.private {
+  color: var(--text-muted);
+  background: rgba(120,120,140,0.12);
+}
+.repo-link-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  margin-left: auto;
+}
+.repo-link-badge.demo {
+  color: #065f46;
+  background: rgba(2,184,117,0.13);
+}
+.repo-link-badge.github-only {
   color: var(--text-muted);
   background: rgba(120,120,140,0.12);
 }
