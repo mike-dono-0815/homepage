@@ -1048,23 +1048,23 @@ section { padding: 5rem 0; }
   text-align: center;
   gap: 0.35rem;
   padding: 1.25rem 1rem;
-  border: 1.5px solid rgba(255,255,255,0.1);
+  border: 1.5px solid var(--gray-200);
   border-radius: var(--radius-lg);
   text-decoration: none;
-  background: rgba(255,255,255,0.04);
+  background: var(--white);
   transition: all var(--transition);
 }
 .contact-card:hover {
   border-color: var(--gold);
   background: rgba(200,146,12,0.08);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   text-decoration: none;
   transform: translateY(-2px);
 }
 .contact-icon { font-size: 1.6rem; }
-.contact-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
-.contact-val { font-size: 0.8rem; color: var(--text-light); }
-.contact-card:hover .contact-val { color: var(--gold-light); }
+.contact-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); }
+.contact-val { font-size: 0.8rem; color: var(--gray-700); }
+.contact-card:hover .contact-val { color: var(--gold); }
 
 /* ── FOOTER ───────────────────────────────────────────── */
 footer {
