@@ -1078,6 +1078,12 @@ footer p + p { margin-top: 0.25rem; }
 .footer-note { font-size: 0.75rem; opacity: 0.6; }
 
 /* ── RESPONSIVE ───────────────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* On tablets the hero buttons can wrap to a second line, which
+     pushes them down into the absolutely-positioned scroll hint. */
+  .hero-scroll-hint { display: none; }
+}
+
 @media (max-width: 768px) {
   section { padding: 3.5rem 0; }
 
