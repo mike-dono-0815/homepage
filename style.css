@@ -349,7 +349,7 @@ section { padding: 5rem 0; }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 3.5rem;
   align-items: start;
   margin-top: 2rem;
