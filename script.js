@@ -4,6 +4,12 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
+/* ── BACK TO TOP ─────────────────────────────────────── */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > window.innerHeight);
+}, { passive: true });
+
 /* ── MOBILE NAV TOGGLE ──────────────────────────────── */
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
