@@ -40,7 +40,7 @@
   --shadow-lg: 0 12px 32px rgba(0,0,0,0.15);
   --transition: 0.22s ease;
 
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
   --font-display: 'Playfair Display', Georgia, serif;
   --max-w: 1060px;
 }
