@@ -41,7 +41,6 @@
   --transition: 0.22s ease;
 
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
   --max-w: 1060px;
 }
 
@@ -66,8 +65,10 @@ a:hover { text-decoration: underline; }
 
 ul { list-style: none; }
 
-p { text-align: justify; hyphens: auto; }
-footer p { text-align: center; hyphens: none; }
+p { text-wrap: pretty; }
+h1, h2, h3, h4 { text-wrap: balance; }
+em { font-style: normal; }
+footer p { text-align: center; }
 
 /* ── UTILITY ────────────────────────────────────────── */
 .container {
@@ -81,7 +82,7 @@ section { padding: 5rem 0; }
 
 .section-title {
   font-family: var(--font-body);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--gray-800);
@@ -101,7 +102,7 @@ section { padding: 5rem 0; }
 .section-subtitle {
   color: var(--text-muted);
   margin-bottom: 2.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 .section-subtitle.light { color: var(--text-dim); }
 .section-subtitle a { color: var(--gold-light); }
@@ -149,7 +150,7 @@ section { padding: 5rem 0; }
 }
 .nav-links a {
   padding: 0.35rem 0.7rem;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-dim);
   text-decoration: none;
@@ -217,7 +218,7 @@ section { padding: 5rem 0; }
 .hero-text { flex: 1; }
 
 .hero-eyebrow {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -226,9 +227,9 @@ section { padding: 5rem 0; }
 }
 
 .hero-name {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 800;
+  font-family: var(--font-body);
+  font-size: 4.5rem;
+  font-weight: 700;
   line-height: 1.08;
   color: var(--white);
   margin-bottom: 1.5rem;
@@ -236,7 +237,7 @@ section { padding: 5rem 0; }
 }
 
 .hero-tagline {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-dim);
   max-width: 46ch;
   margin-bottom: 2rem;
@@ -269,7 +270,7 @@ section { padding: 5rem 0; }
   padding: 0.55rem 1.1rem;
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: var(--radius);
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-light);
   text-decoration: none;
@@ -333,8 +334,8 @@ section { padding: 5rem 0; }
 }
 .photo-ring.photo-initials { display: flex; align-items: center; justify-content: center; }
 .initials-fallback {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
+  font-family: var(--font-body);
+  font-size: 3.75rem;
   color: var(--gold-light);
   font-weight: 700;
   position: absolute;
@@ -342,7 +343,7 @@ section { padding: 5rem 0; }
 /* Show initials only when image fails */
 .photo-ring:not(.photo-initials) .initials-fallback { display: none; }
 
-.hero-location { font-size: 0.8rem; color: var(--text-dim); text-align: center; }
+.hero-location { font-size: 0.75rem; color: var(--text-dim); text-align: center; }
 
 /* Scroll hint */
 .hero-scroll-hint {
@@ -352,7 +353,7 @@ section { padding: 5rem 0; }
   align-items: center;
   gap: 0.5rem;
   color: var(--text-dim);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -375,8 +376,6 @@ section { padding: 5rem 0; }
 .about-block {
   margin-bottom: 1rem;
   color: var(--gray-700);
-  text-align: justify;
-  hyphens: auto;
 }
 .about-block:last-child { margin-bottom: 0; }
 
@@ -398,8 +397,8 @@ section { padding: 5rem 0; }
 }
 .hi-icon { flex-shrink: 0; margin-top: 0.1rem; color: var(--gold); }
 .hi-icon svg { display: block; }
-.highlight-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; color: var(--gray-800); }
-.highlight-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+.highlight-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.2rem; color: var(--gray-800); }
+.highlight-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
 /* ── LEADERSHIP & COACHING ────────────────────────────── */
 #leadership { padding-bottom: 5rem; }
@@ -411,7 +410,7 @@ section { padding: 5rem 0; }
   margin-bottom: 3rem;
 }
 .leadership-intro p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-light);
   opacity: 0.85;
   line-height: 1.75;
@@ -447,7 +446,7 @@ section { padding: 5rem 0; }
   margin-bottom: 0.6rem;
 }
 .pillar-card p {
-  font-size: 0.86rem;
+  font-size: 0.875rem;
   color: var(--text-light);
   opacity: 0.8;
   line-height: 1.65;
@@ -512,9 +511,9 @@ section { padding: 5rem 0; }
   margin-bottom: 0.4rem;
   flex-wrap: wrap;
 }
-.tl-year { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+.tl-year { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; }
 .tl-tag {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -525,8 +524,8 @@ section { padding: 5rem 0; }
 .tl-tag.academia { background: rgba(30,160,200,0.12); color: #1a7aaa; }
 
 .tl-body h3 { font-size: 1rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.25rem; }
-.tl-org { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.6rem; }
-.tl-body p { font-size: 0.88rem; color: var(--gray-700); opacity: 1; line-height: 1.6; }
+.tl-org { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+.tl-body p { font-size: 0.875rem; color: var(--gray-700); opacity: 1; line-height: 1.6; }
 .tl-body a { color: var(--gold); }
 
 /* ── PUBLICATIONS (Scholar Overview) ─────────────────── */
@@ -544,7 +543,7 @@ section { padding: 5rem 0; }
 }
 
 .scholar-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -567,15 +566,15 @@ section { padding: 5rem 0; }
 }
 
 .sm-num {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--gold-light);
   line-height: 1;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
 }
 
 .sm-name {
-  font-size: 0.88rem;
+  font-size: 0.875rem;
   color: var(--text-light);
   font-weight: 500;
 }
@@ -595,7 +594,7 @@ section { padding: 5rem 0; }
 }
 
 .scholar-cta {
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   color: var(--gold);
   font-weight: 500;
   align-self: flex-start;
@@ -606,12 +605,12 @@ section { padding: 5rem 0; }
 /* Conference venue callouts */
 .pub-venues-intro { margin-bottom: 1.5rem; }
 .pub-venues-intro h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--white);
   margin-bottom: 0.35rem;
 }
-.pub-venues-intro p { font-size: 0.85rem; color: var(--text-dim); }
+.pub-venues-intro p { font-size: 0.875rem; color: var(--text-dim); }
 
 .conf-grid {
   display: grid;
@@ -644,16 +643,16 @@ section { padding: 5rem 0; }
 }
 
 .conf-acronym {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--gold-light);
   letter-spacing: -0.02em;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   line-height: 1;
 }
 
 .conf-pill {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--navy-900);
   background: var(--gold);
@@ -663,7 +662,7 @@ section { padding: 5rem 0; }
 }
 
 .conf-fullname {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-light);
   line-height: 1.4;
   opacity: 0.8;
@@ -672,7 +671,7 @@ section { padding: 5rem 0; }
 
 .conf-award-tag {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--gold-light);
   background: rgba(200,146,12,0.15);
@@ -682,7 +681,7 @@ section { padding: 5rem 0; }
 }
 
 .conf-fact {
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   color: var(--text-dim);
   line-height: 1.5;
   margin: 0;
@@ -697,12 +696,12 @@ section { padding: 5rem 0; }
   margin-bottom: 1.25rem;
 }
 .top-pubs-intro h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--white);
   margin-bottom: 0.35rem;
 }
-.top-pubs-intro p { font-size: 0.85rem; color: var(--text-dim); }
+.top-pubs-intro p { font-size: 0.875rem; color: var(--text-dim); }
 
 .top-pubs-list { border-top: 1px solid rgba(255,255,255,0.08); }
 
@@ -718,7 +717,7 @@ section { padding: 5rem 0; }
 .tp-item:hover { background: rgba(255,255,255,0.025); }
 
 .tp-year {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-dim);
   min-width: 2.5rem;
@@ -726,7 +725,7 @@ section { padding: 5rem 0; }
 }
 
 .tp-venue {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -763,7 +762,7 @@ section { padding: 5rem 0; }
 .tp-oneline {
   display: inline;
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-dim);
   line-height: 1.6;
 }
@@ -782,7 +781,7 @@ section { padding: 5rem 0; }
   align-items: center;
   gap: 0.3rem;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: normal;
   color: var(--text-dim);
@@ -814,7 +813,7 @@ section { padding: 5rem 0; }
 .tp-details[open] .tp-summary::after { transform: rotate(45deg); }
 
 .tp-abstract {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-dim);
   line-height: 1.6;
   margin: 0.5rem 0 0;
@@ -826,7 +825,7 @@ section { padding: 5rem 0; }
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--navy-900);
   background: var(--gold);
@@ -871,15 +870,15 @@ section { padding: 5rem 0; }
 .award-year {
   position: absolute;
   top: 1rem; right: 1.25rem;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 0.05em;
 }
-.award-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
-.award-card h3 { font-size: 0.92rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.4rem; }
-.award-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
-.award-photo-link { font-size: 0.78rem; color: var(--gold); text-decoration: none; margin-top: 0.4rem; display: inline-block; }
+.award-icon { font-size: 1.875rem; margin-bottom: 0.75rem; }
+.award-card h3 { font-size: 0.875rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.4rem; }
+.award-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+.award-photo-link { font-size: 0.75rem; color: var(--gold); text-decoration: none; margin-top: 0.4rem; display: inline-block; }
 .award-photo-link:hover { text-decoration: underline; }
 
 .team-awards-box {
@@ -888,8 +887,8 @@ section { padding: 5rem 0; }
   border-radius: var(--radius-lg);
   padding: 1.5rem 2rem;
 }
-.team-awards-box h3 { font-size: 0.95rem; font-weight: 600; color: var(--gold); margin-bottom: 0.75rem; }
-.team-awards-box li { font-size: 0.87rem; color: var(--gray-700); padding: 0.3rem 0; }
+.team-awards-box h3 { font-size: 1rem; font-weight: 600; color: var(--gold); margin-bottom: 0.75rem; }
+.team-awards-box li { font-size: 0.875rem; color: var(--gray-700); padding: 0.3rem 0; }
 .team-awards-box a { color: var(--gold); }
 
 /* ── BLOG ─────────────────────────────────────────────── */
@@ -916,7 +915,7 @@ section { padding: 5rem 0; }
   border-color: var(--gold);
 }
 .blog-tag {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -931,7 +930,7 @@ section { padding: 5rem 0; }
 }
 .blog-card-meta .blog-tag { margin-bottom: 0; }
 .blog-read-time {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-muted);
   background: var(--gray-100);
@@ -939,11 +938,11 @@ section { padding: 5rem 0; }
   border-radius: 999px;
   white-space: nowrap;
 }
-.blog-card h3 { font-size: 0.98rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.6rem; line-height: 1.4; }
-.blog-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
+.blog-card h3 { font-size: 1rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.6rem; line-height: 1.4; }
+.blog-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
 .blog-footer {
   margin-top: 1.25rem;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--gray-400);
   padding-top: 0.75rem;
   border-top: 1px solid var(--gray-100);
@@ -962,7 +961,7 @@ section { padding: 5rem 0; }
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 .pillar-links-label {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: rgba(255,255,255,0.3);
@@ -972,7 +971,7 @@ section { padding: 5rem 0; }
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--gold-light);
   opacity: 0.75;
   text-decoration: none;
@@ -982,7 +981,7 @@ section { padding: 5rem 0; }
   transition: opacity var(--transition), transform var(--transition);
 }
 .pillar-links a:last-child { border-bottom: none; }
-.pillar-links a::before { content: "↗"; font-size: 0.7rem; flex-shrink: 0; opacity: 0.6; }
+.pillar-links a::before { content: "↗"; font-size: 0.75rem; flex-shrink: 0; opacity: 0.6; }
 .pillar-links a:hover { opacity: 1; text-decoration: none; transform: translateX(0.3rem); }
 
 /* ── GITHUB / PROJECTS ────────────────────────────────── */
@@ -998,7 +997,7 @@ section { padding: 5rem 0; }
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
   color: var(--gray-700);
-  font-size: 0.88rem;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   transition: all var(--transition);
@@ -1058,19 +1057,19 @@ section { padding: 5rem 0; }
   gap: 0.45rem;
 }
 .repo-header { display: flex; align-items: center; justify-content: space-between; }
-.repo-icon { font-size: 1.4rem; }
+.repo-icon { font-size: 1.5rem; }
 .repo-lang {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--gold);
   background: rgba(200,146,12,0.12);
   padding: 0.15rem 0.5rem;
   border-radius: 99px;
 }
-.repo-card h3 { font-size: 0.92rem; font-weight: 600; color: var(--gray-800); }
-.repo-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+.repo-card h3 { font-size: 0.875rem; font-weight: 600; color: var(--gray-800); }
+.repo-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
 .repo-visibility {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 0.15rem 0.5rem;
   border-radius: 99px;
@@ -1084,7 +1083,7 @@ section { padding: 5rem 0; }
   background: rgba(120,120,140,0.12);
 }
 .repo-link-badge {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 0.15rem 0.5rem;
   border-radius: 99px;
@@ -1115,7 +1114,7 @@ section { padding: 5rem 0; }
 .contact-outro {
   margin-top: 2.5rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--text-muted);
 }
 
@@ -1140,9 +1139,9 @@ section { padding: 5rem 0; }
   text-decoration: none;
   transform: translateY(-2px);
 }
-.contact-icon { font-size: 1.3rem; }
-.contact-label { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); }
-.contact-val { font-size: 0.7rem; color: var(--gray-700); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contact-icon { font-size: 1.25rem; }
+.contact-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); }
+.contact-val { font-size: 0.75rem; color: var(--gray-700); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .contact-card:hover .contact-val { color: var(--gold); }
 
 /* ── FOOTER ───────────────────────────────────────────── */
@@ -1151,7 +1150,7 @@ footer {
   color: var(--text-dim);
   text-align: center;
   padding: 2rem 1.5rem;
-  font-size: 0.82rem;
+  font-size: 0.875rem;
 }
 footer p + p { margin-top: 0.25rem; }
 .footer-note { font-size: 0.75rem; opacity: 0.6; }
@@ -1200,7 +1199,7 @@ footer p + p { margin-top: 0.25rem; }
     border-top: 1px solid rgba(255,255,255,0.06);
   }
   .nav-links.open { display: grid; }
-  .nav-links a { padding: 0.7rem 0.5rem; font-size: 0.95rem; text-align: center; }
+  .nav-links a { padding: 0.7rem 0.5rem; font-size: 1rem; text-align: center; }
 
   /* Hero */
   .hero-inner { flex-direction: column-reverse; gap: 2rem; text-align: center; }
@@ -1228,6 +1227,8 @@ footer p + p { margin-top: 0.25rem; }
 }
 
 @media (max-width: 480px) {
+  .section-title { font-size: 1.5rem; }
+  .hero-name { font-size: 3rem; }
   .hero-stats { gap: 1.5rem; }
   .contact-grid { grid-template-columns: 1fr; }
   .repo-grid { grid-template-columns: 1fr; }
@@ -1237,7 +1238,7 @@ footer p + p { margin-top: 0.25rem; }
 /* ── BOOK ───────────────────────────────────────────── */
 .book-title-sub {
   display: block;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
   color: var(--white);
@@ -1283,7 +1284,7 @@ footer p + p { margin-top: 0.25rem; }
   margin-bottom: 1.4rem;
 }
 .book-badge {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1303,7 +1304,7 @@ footer p + p { margin-top: 0.25rem; }
 
 .book-description {
   color: var(--text-dim);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.75;
   margin-bottom: 1rem;
 }
@@ -1322,7 +1323,7 @@ footer p + p { margin-top: 0.25rem; }
   gap: 0.5rem;
   padding: 0.7rem 1.4rem;
   border-radius: var(--radius);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
@@ -1339,9 +1340,8 @@ footer p + p { margin-top: 0.25rem; }
 }
 
 .book-chapter-label {
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   color: var(--text-dim);
-  font-style: italic;
 }
 
 @media (max-width: 768px) {
