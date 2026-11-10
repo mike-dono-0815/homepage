@@ -12,7 +12,7 @@ Live at: [mike-dono-0815.github.io/homepage](https://mike-dono-0815.github.io/ho
 - **Writing** — Blog posts on research leadership, AI, and management
 - **Publications** — Selected computer vision research (h-index 27, 3,200+ citations)
 - **Projects** — Side projects built with plain HTML/CSS/JS and Python
-- **Contact** — Links to LinkedIn, Google Scholar, ResearchGate, GitHub, and DBLP
+- **Contact** — Links to LinkedIn, Medium, GitHub, Google Scholar, Substack, Instagram, and TikTok
 
 ## Tech Stack
 
