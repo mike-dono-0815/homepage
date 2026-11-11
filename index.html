@@ -53,12 +53,11 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#hero">Skip to content</a>
 
   <!-- Phosphor icons (regular), MIT -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -90,12 +89,12 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#book">Book</a></li>
+        <li><a href="#blog">Writing</a></li>
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#career">Career</a></li>
-        <li><a href="#blog">Writing</a></li>
-        <li><a href="#publications">Research</a></li>
         <li><a href="#github">Projects</a></li>
-        <li><a href="#book">Book</a></li>
+        <li><a href="#publications">Research</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#newsletter" class="nav-cta">Subscribe</a>
@@ -171,11 +170,116 @@
     </div>
   </section>
 
+  <!-- ── BOOK ─────────────────────────────────────────────────── -->
+  <section id="book" class="section-dark">
+    <div class="container">
+      <h2 class="section-title light" aria-label="The Leadership Fork: 55 Mechanisms for Leading When the Playbook Stops Working">The Leadership Fork<span class="book-title-sub">55 Mechanisms for Leading When the Playbook Stops Working</span></h2>
+      <p class="section-subtitle light">Coming in 2027. Five situations every leader faces, two teams in each, and 55 mechanisms you can start using on Monday.</p>
+      <div class="book-layout">
+        <div class="book-cover-wrap">
+          <span class="corner corner-tl" aria-hidden="true"></span>
+          <span class="corner corner-tr" aria-hidden="true"></span>
+          <span class="corner corner-bl" aria-hidden="true"></span>
+          <span class="corner corner-br" aria-hidden="true"></span>
+          <img src="img/BookCover.jpg?v=3" alt="The Leadership Fork: 55 Mechanisms for Leading When the Playbook Stops Working, by Michael Donoser (book cover)" class="book-cover-img" onerror="this.style.display='none'">
+        </div>
+        <div class="book-info">
+          <div class="book-badges">
+            <span class="book-badge book-badge--wip">Out in 2027</span>
+            <span class="book-badge book-badge--chapter">Chapter 1 free via the newsletter</span>
+          </div>
+          <ol class="book-chapters">
+            <li><span class="bc-title">The Launch Disaster</span><span class="bc-topic">A launch crisis: whether people feel safe enough to flag a risk before it becomes a crisis.</span></li>
+            <li><span class="bc-title">The Friction Point</span><span class="bc-topic">Cross-team conflict: how two people keep trust intact under pressure and disagreement.</span></li>
+            <li><span class="bc-title">The Olympus Bet</span><span class="bc-topic">A mid-year pivot: building the right thing, and changing course when the plan no longer fits.</span></li>
+            <li><span class="bc-title">The Choice Point</span><span class="bc-topic">High-stakes decisions: defining the real problem before the loudest voice decides.</span></li>
+            <li><span class="bc-title">The AI Frontier</span><span class="bc-topic">AI disruption: turning a mandate into real capability instead of gamed metrics.</span></li>
+          </ol>
+          <div class="book-links">
+            <a href="#newsletter" class="btn-hero btn-hero-primary">Subscribe to the newsletter</a>
+            <a href="https://theleadershipfork.com" class="book-site-link" target="_blank" rel="noopener">More at theleadershipfork.com &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── BLOG ────────────────────────────────────────────────── -->
+  <section id="blog">
+    <div class="container">
+      <h2 class="section-title">Writing</h2>
+      <p class="section-subtitle">Selected posts on leadership, learning, and the age of Generative AI. Published on <a href="https://www.linkedin.com/in/michael-donoser-17449458/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://medium.com/@michael.donoser" target="_blank" rel="noopener">Medium</a>.</p>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <div class="blog-tag">Leadership &amp; Identity</div>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h3>I am a Director of Science at Amazon. I've Been Winging It My Whole Life.</h3>
+          <p>A candid reflection on imposter syndrome, self-doubt, and the messiness behind a career that looks polished from the outside.</p>
+          <div class="blog-footer"><a href="https://medium.com/age-of-awareness/i-am-a-director-of-science-at-amazon-ive-been-winging-it-my-whole-life-dac6ebc17beb" target="_blank" rel="noopener">Read on Medium &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-meta">
+            <div class="blog-tag">Generative AI</div>
+            <span class="blog-read-time">11 min read</span>
+          </div>
+          <h3>From C64 to Claude: How AI Finally Let Me Build My Dream Game</h3>
+          <p>A childhood dream deferred by programming complexity, finally realised with AI. On creativity, persistence, and what it means to build something truly your own.</p>
+          <div class="blog-footer"><a href="https://ai.plainenglish.io/from-c64-to-claude-how-ai-finally-let-me-build-my-dream-game-b3bf6f542d8f" target="_blank" rel="noopener">Read on Medium &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Growth Mindset</div>
+          <h3>Fearing to Look Stupid Holds You Back</h3>
+          <p>AI creates the first truly judgment-free learning environment in human history. The only barrier to growth is giving yourself permission to ask.</p>
+          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_artificialintelligence-ailearning-growthmindset-activity-7414689371649703936-IjMn" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Resilience &amp; Ownership</div>
+          <h3>Take Action Instead of Pointing Fingers</h3>
+          <p>When projects derail, leaders reveal their true nature. Exceptional ones refuse the victim mindset and ask: what can I do right now?</p>
+          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-growthmindset-professionalgrowth-activity-7416461205944340481-lVgX" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Communication &amp; Influence</div>
+          <h3>How To Communicate to AI</h3>
+          <p>The same principles that make us effective communicators with humans apply when prompting AI. Mastering one may sharpen the other.</p>
+          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_ai-communication-promptengineering-activity-7386353005870370817-4aBP" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Building Teams</div>
+          <h3>Kaizen Town Halls: Building a Culture of Continuous Improvement</h3>
+          <p>A regular forum where every team member has a voice. How Kaizen Town Halls build psychological safety and turn tensions into rapid, meaningful change.</p>
+          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_kaizen-psychologicalsafety-personaldevelopment-activity-7292530015244611584-ACCG" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Building Teams</div>
+          <h3>The Potemkin Organization</h3>
+          <p>When teams optimise for how they appear to leadership rather than real outcomes, the facade can look strong right up until it suddenly isn't.</p>
+          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-orgculture-leadershipprinciples-activity-7424069624037699586-2M7R" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Mental Models</div>
+          <h3>The Secret to Being Right A Lot</h3>
+          <p>Great decisions don't come from experience alone. They come from building a diverse toolkit of thinking frameworks that cut through noise and bias.</p>
+          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadershipprinciples-arerightalot-mentalmodels-activity-7269281844502704128-mxLc" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Generative AI</div>
+          <h3>From Idea to Working App in 30 Minutes</h3>
+          <p>When you can build your own tools in less than a lunch break, you move from passive observer to proactive creator. The only remaining obstacle is curiosity.</p>
+          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_generativeai-rapidprototyping-innovationmindset-activity-7429855297357160449-LeG0" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── LEADERSHIP & COACHING ────────────────────────────────── -->
   <section id="leadership" class="section-dark">
     <div class="container">
       <h2 class="section-title light">Leadership &amp; Coaching</h2>
-      <p class="section-subtitle light">One of my deepest passions is developing the next generation of leaders in fast-paced industry environments, helping brilliant scientists and engineers grow not just as technical experts, but as self-aware, resilient, and impactful human beings.</p>
+      <p class="section-subtitle light">Helping people at any level grow into self-aware, resilient leaders. Six themes I coach and write about.</p>
 
       <div class="leadership-intro">
         <p>After more than a decade leading science teams at Amazon, I came to believe that the biggest leverage point in any organisation isn't the technology: it's the people. Coaching and mentoring was never a side activity for me; it was a core part of how I led. I invested deeply in building the inner toolkit of my teams: the resilience to own outcomes, the clarity to cut through noise, and the self-awareness to stay grounded when everything around them was moving fast. Today that is my full focus, through my book, my newsletter and coaching the next generation of leaders.</p>
@@ -397,76 +501,133 @@
     </div>
   </section>
 
-  <!-- ── BLOG ────────────────────────────────────────────────── -->
-  <section id="blog">
+  <!-- ── GITHUB / PROJECTS ────────────────────────────────────── -->
+  <section id="github">
     <div class="container">
-      <h2 class="section-title">Writing</h2>
-      <p class="section-subtitle">Selected posts on leadership, learning, and the age of Generative AI. Published on <a href="https://www.linkedin.com/in/michael-donoser-17449458/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://medium.com/@michael.donoser" target="_blank" rel="noopener">Medium</a>.</p>
-      <div class="blog-grid">
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <div class="blog-tag">Leadership &amp; Identity</div>
-            <span class="blog-read-time">6 min read</span>
+      <h2 class="section-title">Personal Projects</h2>
+      <p class="section-subtitle">Side projects &amp; experiments on GitHub</p>
+      <div class="github-profile-cta">
+        <a href="https://github.com/mike-dono-0815" class="gh-profile-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View all repositories on GitHub &rarr;
+        </a>
+      </div>
+      <div class="repo-grid">
+        <a href="https://cv-conf-app.vercel.app/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/ConferenceSimulator.jpg" alt="cv-conf-app preview" onerror="this.style.display='none'">
           </div>
-          <h3>I am a Director of Science at Amazon. I've Been Winging It My Whole Life.</h3>
-          <p>A candid reflection on imposter syndrome, self-doubt, and the messiness behind a career that looks polished from the outside.</p>
-          <div class="blog-footer"><a href="https://medium.com/age-of-awareness/i-am-a-director-of-science-at-amazon-ive-been-winging-it-my-whole-life-dac6ebc17beb" target="_blank" rel="noopener">Read on Medium &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <div class="blog-tag">Generative AI</div>
-            <span class="blog-read-time">11 min read</span>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg></span>
+              <span class="repo-lang">TypeScript</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>cv-conf-app</h3>
+            <p>Conference Simulator: step inside an interactive 3D CVPR venue, explore poster sessions, watch oral talks, and visit the industry fair.</p>
           </div>
-          <h3>From C64 to Claude: How AI Finally Let Me Build My Dream Game</h3>
-          <p>A childhood dream deferred by programming complexity, finally realised with AI. On creativity, persistence, and what it means to build something truly your own.</p>
-          <div class="blog-footer"><a href="https://ai.plainenglish.io/from-c64-to-claude-how-ai-finally-let-me-build-my-dream-game-b3bf6f542d8f" target="_blank" rel="noopener">Read on Medium &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Growth Mindset</div>
-          <h3>Fearing to Look Stupid Holds You Back</h3>
-          <p>AI creates the first truly judgment-free learning environment in human history. The only barrier to growth is giving yourself permission to ask.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_artificialintelligence-ailearning-growthmindset-activity-7414689371649703936-IjMn" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Resilience &amp; Ownership</div>
-          <h3>Take Action Instead of Pointing Fingers</h3>
-          <p>When projects derail, leaders reveal their true nature. Exceptional ones refuse the victim mindset and ask: what can I do right now?</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-growthmindset-professionalgrowth-activity-7416461205944340481-lVgX" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Communication &amp; Influence</div>
-          <h3>How To Communicate to AI</h3>
-          <p>The same principles that make us effective communicators with humans apply when prompting AI. Mastering one may sharpen the other.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_ai-communication-promptengineering-activity-7386353005870370817-4aBP" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Building Teams</div>
-          <h3>Kaizen Town Halls: Building a Culture of Continuous Improvement</h3>
-          <p>A regular forum where every team member has a voice. How Kaizen Town Halls build psychological safety and turn tensions into rapid, meaningful change.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_kaizen-psychologicalsafety-personaldevelopment-activity-7292530015244611584-ACCG" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Building Teams</div>
-          <h3>The Potemkin Organization</h3>
-          <p>When teams optimise for how they appear to leadership rather than real outcomes, the facade can look strong right up until it suddenly isn't.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-orgculture-leadershipprinciples-activity-7424069624037699586-2M7R" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Mental Models</div>
-          <h3>The Secret to Being Right A Lot</h3>
-          <p>Great decisions don't come from experience alone. They come from building a diverse toolkit of thinking frameworks that cut through noise and bias.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadershipprinciples-arerightalot-mentalmodels-activity-7269281844502704128-mxLc" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Generative AI</div>
-          <h3>From Idea to Working App in 30 Minutes</h3>
-          <p>When you can build your own tools in less than a lunch break, you move from passive observer to proactive creator. The only remaining obstacle is curiosity.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_generativeai-rapidprototyping-innovationmindset-activity-7429855297357160449-LeG0" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
+        </a>
+        <a href="https://world-cup-app-eta.vercel.app/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/SoccerBet.png" alt="world-cup-betting preview" onerror="this.style.display='none'">
+          </div>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-dice-five"/></svg></span>
+              <span class="repo-lang">TypeScript</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>world-cup-betting</h3>
+            <p>FIFA World Cup 2026 betting game: predict match results, compete on a leaderboard, and track your picks across the full tournament.</p>
+          </div>
+        </a>
+        <a href="https://mike-dono-0815.github.io/adventure-game/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/Adventure.jpg" alt="adventure-game preview" onerror="this.style.display='none'">
+          </div>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-game-controller"/></svg></span>
+              <span class="repo-lang">Python</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>adventure-game</h3>
+            <p>A text-based adventure game exploring interactive storytelling with AI-generated narratives.</p>
+          </div>
+        </a>
+        <a href="https://mike-dono-0815.github.io/world-cup-simulation/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/WorldCup.png" alt="world-cup-simulation preview" onerror="this.style.display='none'">
+          </div>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+              <span class="repo-lang">TypeScript</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>world-cup-simulation</h3>
+            <p>Interactive FIFA World Cup 2026 tournament simulator. Enter match results through group stage and knockout rounds to crown a champion.</p>
+          </div>
+        </a>
+        <a href="https://mike-dono-0815.github.io/learn-japanese/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/Japan.png" alt="learn-japanese preview" onerror="this.style.display='none'">
+          </div>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></span>
+              <span class="repo-lang">JavaScript</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>learn-japanese</h3>
+            <p>An exercise tool for learning Japanese.</p>
+          </div>
+        </a>
+        <a href="https://mike-dono-0815.github.io/soccer-story-game/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/SoccerGame.png" alt="soccer story game preview" onerror="this.style.display='none'">
+          </div>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-soccer-ball"/></svg></span>
+              <span class="repo-lang">JavaScript</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>soccer-story-game</h3>
+            <p>An interactive soccer story game with branching narratives and match simulation.</p>
+          </div>
+        </a>
+        <a href="https://mike-dono-0815.github.io/easter-treasure-hunt/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/EasterApp.png" alt="easter-treasure-hunt preview" onerror="this.style.display='none'">
+          </div>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-cat"/></svg></span>
+              <span class="repo-lang">JavaScript</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>easter-treasure-hunt</h3>
+            <p>An Easter-themed treasure hunt game with snakes and interactive challenges.</p>
+          </div>
+        </a>
+        <a href="https://mike-dono-0815.github.io/guitar-scale-trainer/" class="repo-card" target="_blank" rel="noopener">
+          <div class="repo-thumb">
+            <img src="img/GuitarScales.png" alt="guitar-scale-trainer preview" onerror="this.style.display='none'">
+          </div>
+          <div class="repo-body">
+            <div class="repo-header">
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-guitar"/></svg></span>
+              <span class="repo-lang">JavaScript</span>
+              <span class="repo-link-badge demo">Live Demo</span>
+            </div>
+            <h3>guitar-scale-trainer</h3>
+            <p>Interactive fretboard trainer for learning guitar scales and modes.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
-
 
   <!-- ── PUBLICATIONS ──────────────────────────────────────────── -->
   <section id="publications" class="section-dark">
@@ -544,171 +705,11 @@
     </div>
   </section>
 
-  <!-- ── GITHUB / PROJECTS ────────────────────────────────────── -->
-  <section id="github">
-    <div class="container">
-      <h2 class="section-title">Personal Projects</h2>
-      <p class="section-subtitle">Side projects &amp; experiments on GitHub</p>
-      <div class="github-profile-cta">
-        <a href="https://github.com/mike-dono-0815" class="gh-profile-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View all repositories on GitHub &rarr;
-        </a>
-      </div>
-      <div class="repo-grid">
-        <a href="https://cv-conf-app.vercel.app/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/ConferenceSimulator.jpg" alt="cv-conf-app preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg></span>
-              <span class="repo-lang">TypeScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>cv-conf-app</h3>
-            <p>Conference Simulator &mdash; step inside an interactive 3D CVPR venue, explore poster sessions, watch oral talks, and visit the industry fair.</p>
-          </div>
-        </a>
-        <a href="https://world-cup-app-eta.vercel.app/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/SoccerBet.png" alt="world-cup-betting preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-dice-five"/></svg></span>
-              <span class="repo-lang">TypeScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>world-cup-betting</h3>
-            <p>FIFA World Cup 2026 betting game — predict match results, compete on a leaderboard, and track your picks across the full tournament.</p>
-          </div>
-        </a>
-        <a href="https://mike-dono-0815.github.io/adventure-game/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/Adventure.jpg" alt="adventure-game preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-game-controller"/></svg></span>
-              <span class="repo-lang">Python</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>adventure-game</h3>
-            <p>A text-based adventure game exploring interactive storytelling with AI-generated narratives.</p>
-          </div>
-        </a>
-        <a href="https://mike-dono-0815.github.io/world-cup-simulation/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/WorldCup.png" alt="world-cup-simulation preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>
-              <span class="repo-lang">TypeScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>world-cup-simulation</h3>
-            <p>Interactive FIFA World Cup 2026 tournament simulator — enter match results through group stage and knockout rounds to crown a champion.</p>
-          </div>
-        </a>
-        <a href="https://mike-dono-0815.github.io/learn-japanese/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/Japan.png" alt="learn-japanese preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>learn-japanese</h3>
-            <p>An exercise tool for learning Japanese.</p>
-          </div>
-        </a>
-        <a href="https://mike-dono-0815.github.io/soccer-story-game/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/SoccerGame.png" alt="soccer story game preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-soccer-ball"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>soccer-story-game</h3>
-            <p>An interactive soccer story game with branching narratives and match simulation.</p>
-          </div>
-        </a>
-        <a href="https://mike-dono-0815.github.io/easter-treasure-hunt/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/EasterApp.png" alt="easter-treasure-hunt preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-cat"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>easter-treasure-hunt</h3>
-            <p>An Easter-themed treasure hunt game with snakes and interactive challenges.</p>
-          </div>
-        </a>
-        <a href="https://mike-dono-0815.github.io/guitar-scale-trainer/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/GuitarScales.png" alt="guitar-scale-trainer preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-guitar"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>guitar-scale-trainer</h3>
-            <p>Interactive fretboard trainer for learning guitar scales and modes.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── BOOK ─────────────────────────────────────────────────── -->
-  <section id="book" class="section-dark">
-    <div class="container">
-      <h2 class="section-title light" aria-label="The Leadership Fork: 55 Mechanisms for Leading When the Playbook Stops Working">The Leadership Fork<span class="book-title-sub">55 Mechanisms for Leading When the Playbook Stops Working</span></h2>
-      <p class="section-subtitle light">A book in progress &mdash; stories from eleven years leading tech teams at Amazon.</p>
-      <div class="book-layout">
-        <div class="book-cover-wrap">
-          <span class="corner corner-tl" aria-hidden="true"></span>
-          <span class="corner corner-tr" aria-hidden="true"></span>
-          <span class="corner corner-bl" aria-hidden="true"></span>
-          <span class="corner corner-br" aria-hidden="true"></span>
-          <img src="img/BookCover.jpg?v=3" alt="The Leadership Fork: 55 Mechanisms for Leading When the Playbook Stops Working, by Michael Donoser (book cover)" class="book-cover-img" onerror="this.style.display='none'">
-        </div>
-        <div class="book-info">
-          <div class="book-badges">
-            <span class="book-badge book-badge--wip">Work in Progress</span>
-            <span class="book-badge book-badge--chapter">Pre-read Available</span>
-          </div>
-          <p class="book-description">Why do some teams seem almost effortlessly effective &mdash; energised, honest, resilient under pressure &mdash; while others, staffed with equally talented people and similar resources, quietly struggle? This book explores that question through small, human stories drawn from over a decade inside Amazon. Each story follows two hypothetical teams facing the same situation. The difference is never skill or intent &mdash; it is the specific, repeatable behaviours that produce results you can actually start using on Monday morning.</p>
-          <p class="book-description">The chapters are written for everyone on a team, not just those with the word &ldquo;manager&rdquo; in their title. Everyone is a leader. Every person shapes culture.</p>
-          <div class="book-links">
-            <a href="#newsletter" class="btn-hero btn-hero-primary">Subscribe to the newsletter</a>
-            <a href="https://theleadershipfork.com" class="book-site-link" target="_blank" rel="noopener">More at theleadershipfork.com &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
   <!-- ── CONTACT ──────────────────────────────────────────────── -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Find Me Online</h2>
-      <p class="section-subtitle">Explore my work, publications, and professional background across these platforms.</p>
+      <p class="section-subtitle">Where I write, share and stay in touch.</p>
       <div class="contact-grid">
         <a href="https://www.linkedin.com/in/michael-donoser-17449458/" class="contact-card" target="_blank" rel="noopener">
           <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-linkedin-logo"/></svg></div>
@@ -754,7 +755,7 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 Michael Donoser, Ph.D. &middot; Author of The Leadership Fork</p>
-      <p class="footer-note">Built with plain HTML/CSS/JS &middot; Hosted on GitHub Pages</p>
+      <p class="footer-note"><a href="imprint.html">Imprint</a> &middot; <a href="privacy.html">Privacy</a> &middot; Hosted on GitHub Pages</p>
     </div>
   </footer>
 
