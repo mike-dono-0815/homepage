@@ -337,11 +337,12 @@ body.nav-open { overflow: hidden; }
 }
 
 .hero-tagline {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--text-dim);
-  max-width: 46ch;
+  max-width: 34rem;
   margin-bottom: 2rem;
-  line-height: 1.65;
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
 .hero-stats {
@@ -386,7 +387,7 @@ body.nav-open { overflow: hidden; }
 }
 .btn-hero-primary { padding: 0.55rem 1.4rem; }
 .btn-hero:active { transform: scale(0.98); }
-.hero-cta-note { margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-dim); max-width: 46ch; }
+.hero-cta-note { margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-dim); max-width: 34rem; text-wrap: balance; }
 .btn-hero-primary:hover {
   background: var(--gold-light);
   border-color: var(--gold-light);
@@ -395,6 +396,8 @@ body.nav-open { overflow: hidden; }
 
 /* Hero visual: portrait plus book cover */
 .hero-visual { position: relative; }
+/* below ~1140px there is no page margin left for the overhanging cover */
+@media (max-width: 1140px) { .hero-visual { margin-right: 48px; } }
 .hero-cover {
   position: absolute;
   right: -48px;
@@ -1123,6 +1126,7 @@ footer p + p { margin-top: 0.25rem; }
   .nl-grid { grid-template-columns: 1fr; gap: 2rem; }
   .nl-signup { position: static; order: -1; padding: 1.5rem; }
   .hero-cover { width: 84px; right: -64px; bottom: -8px; }
+  .hero-visual { margin-right: 0; }
 
   /* Timeline */
   .timeline { padding-left: 1.75rem; }
