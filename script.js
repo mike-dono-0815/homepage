@@ -90,7 +90,7 @@ if ('IntersectionObserver' in window) {
 
   // Apply to major blocks
   document.querySelectorAll(
-    '.highlight-card, .timeline-item, .award-card, .blog-card, .repo-card, .contact-card'
+    '.timeline-item, .award-card, .blog-card, .repo-card, .contact-card'
   ).forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${(i % 4) * 60}ms`;

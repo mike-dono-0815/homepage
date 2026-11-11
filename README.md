@@ -5,7 +5,7 @@ Live at: [mike-dono-0815.github.io/homepage](https://mike-dono-0815.github.io/ho
 
 ## Content
 
-- **About** — Background bridging academia and industry, leading a centralized computer vision R&D team at Amazon
+- **Newsletter** — Why a book, and why this newsletter: The Leadership Fork story plus the Substack signup
 - **Leadership** — Leadership philosophy covering vision, people development, and execution
 - **Career** — Timeline of roles from academia through 10+ years at Amazon
 - **Awards** — Academic and professional recognition
