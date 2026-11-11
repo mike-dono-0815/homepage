@@ -10,7 +10,7 @@ Live at: [mike-dono-0815.github.io/homepage](https://mike-dono-0815.github.io/ho
 - **Career** — Timeline of roles from academia through 10+ years at Amazon
 - **Awards** — Academic and professional recognition
 - **Writing** — Blog posts on research leadership, AI, and management
-- **Publications** — Selected computer vision research (h-index 27, 3,200+ citations)
+- **Research Background** — Google Scholar metrics (h-index 27, 3,200+ citations) and publication venues
 - **Projects** — Side projects built with plain HTML/CSS/JS and Python
 - **Contact** — Links to LinkedIn, Medium, GitHub, Google Scholar, Substack, Instagram, and TikTok
 
