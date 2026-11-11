@@ -190,6 +190,24 @@ section { padding: 5rem 0; }
 .nav-links a:focus-visible,
 .nav-toggle:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
 
+.nav-cta {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: var(--gold);
+  color: var(--navy-900);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--transition), transform var(--transition-move);
+}
+.nav-cta:hover { background: var(--gold-light); color: var(--navy-900); text-decoration: none; }
+.nav-cta:active { transform: scale(0.98); }
+.nav-cta:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
+
 .nav-toggle {
   position: relative;
   z-index: 2;
@@ -226,10 +244,10 @@ section { padding: 5rem 0; }
   to   { opacity: 1; }
 }
 
-/* Full-height mobile menu; the pill needs ~900px for all eight links */
-@media (max-width: 960px) {
-  .nav-container { gap: 16px; padding: 4px 4px 4px 20px; }
-  .nav-toggle { display: flex; }
+/* Full-height mobile menu; the pill needs ~1000px for all links plus the CTA */
+@media (max-width: 1080px) {
+  .nav-container { gap: 12px; padding: 4px 4px 4px 20px; }
+  .nav-toggle { display: flex; order: 3; }
   .nav-links {
     position: fixed;
     inset: 0;
@@ -361,6 +379,22 @@ body.nav-open { overflow: hidden; }
   color: var(--navy-900);
   font-weight: 600;
 }
+.btn-hero-primary { padding: 0.55rem 1.4rem; }
+.btn-hero:active { transform: scale(0.98); }
+.hero-social { display: inline-flex; align-items: center; gap: 0.25rem; margin-left: 0.5rem; }
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  color: var(--text-dim);
+  font-size: 1.25rem;
+  transition: color var(--transition), background-color var(--transition);
+}
+.hero-social-link:hover { color: var(--white); background: rgba(255,255,255,0.1); text-decoration: none; }
+.hero-cta-note { margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-dim); max-width: 46ch; }
 .btn-hero-primary:hover {
   background: var(--gold-light);
   border-color: var(--gold-light);
@@ -1177,39 +1211,53 @@ footer p + p { margin-top: 0.25rem; }
   margin-bottom: 1rem;
 }
 
-.book-actions {
-  margin-top: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+.book-site-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gold-light);
 }
 
-.book-btn {
-  display: inline-flex;
+.newsletter-card {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.4rem;
-  border-radius: var(--radius);
-  font-size: 0.875rem;
+  padding: 2.5rem;
+  border: 1px solid rgba(232,172,32,0.45);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.04);
+}
+.newsletter-eyebrow {
+  font-size: 0.75rem;
   font-weight: 600;
-  text-decoration: none;
-  transition: background var(--transition), transform var(--transition-move), box-shadow var(--transition);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
 }
-.book-btn--primary {
-  background: var(--gold);
-  color: var(--navy-900);
+.newsletter-title {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
 }
-.book-btn--primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(200,146,12,0.4);
-  text-decoration: none;
+.newsletter-text { font-size: 1rem; color: var(--text-light); margin-bottom: 1rem; }
+.newsletter-fine { font-size: 0.75rem; color: var(--text-dim); }
+.newsletter-fine a { color: var(--gold-light); }
+.newsletter-embed {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
 }
+.newsletter-embed iframe { display: block; width: 100%; height: 320px; border: 0; background: #fff; }
 
-.book-chapter-label {
-  font-size: 0.875rem;
-  color: var(--text-dim);
+@media (max-width: 860px) {
+  .newsletter-card { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
+  .newsletter-title { font-size: 1.5rem; }
 }
 
 @media (max-width: 768px) {
@@ -1223,7 +1271,6 @@ footer p + p { margin-top: 0.25rem; }
   }
   .book-info { text-align: center; }
   .book-badges { justify-content: center; }
-  .book-actions { justify-content: center; }
 }
 
 /* ── REDUCED MOTION: keep fades, drop movement ─────────── */
