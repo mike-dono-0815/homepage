@@ -479,6 +479,7 @@ body.nav-open { overflow: hidden; }
 }
 .nl-story p { font-size: 1.125rem; line-height: 1.7; color: var(--gray-700); margin-bottom: 1.25rem; }
 .nl-story p:last-child { margin-bottom: 0; }
+.nowrap { white-space: nowrap; }
 .nl-story strong { color: var(--gray-800); font-weight: 600; }
 
 .nl-signup {
