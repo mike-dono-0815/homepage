@@ -293,7 +293,7 @@ body.nav-open { overflow: hidden; }
 /* ── HERO ────────────────────────────────────────────── */
 #hero {
   min-height: 100vh;
-  background: var(--navy-800);
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-600) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -301,6 +301,16 @@ body.nav-open { overflow: hidden; }
   position: relative;
   overflow: hidden;
 }
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 40%, rgba(200,146,12,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
 .hero-inner {
   max-width: var(--max-w);
   width: 100%;
@@ -502,8 +512,7 @@ body.nav-open { overflow: hidden; }
 }
 .scroll-arrow {
   width: 1px; height: 32px;
-  background: var(--gold);
-  opacity: 0.6;
+  background: linear-gradient(to bottom, var(--gold), transparent);
 }
 
 /* ── NEWSLETTER (why a book) ─────────────────────────── */
@@ -614,7 +623,7 @@ body.nav-open { overflow: hidden; }
   top: 0.5rem;
   bottom: 0;
   width: 2px;
-  background: rgba(200,146,12,0.45);
+  background: linear-gradient(to bottom, var(--gold), rgba(200,146,12,0.15));
 }
 
 .timeline-item {
