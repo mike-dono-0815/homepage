@@ -612,8 +612,9 @@ body.nav-open { overflow: hidden; }
 #career { padding-bottom: 5rem; background: var(--gray-50); }
 
 .timeline {
+  --tl-pad: 2.5rem;
   position: relative;
-  padding-left: 2.5rem;
+  padding-left: var(--tl-pad);
   margin-top: 2.5rem;
 }
 .timeline::before {
@@ -634,7 +635,8 @@ body.nav-open { overflow: hidden; }
 
 .tl-dot {
   position: absolute;
-  left: -2.06rem;
+  /* keeps the dot centred on the line whatever the timeline padding is */
+  left: calc(0.44rem - var(--tl-pad));
   top: 0.35rem;
   width: 14px; height: 14px;
   border-radius: 50%;
@@ -1183,7 +1185,7 @@ footer p + p { margin-top: 0.25rem; }
   .hero-visual { margin-right: 0; }
 
   /* Timeline */
-  .timeline { padding-left: 1.5rem; }
+  .timeline { --tl-pad: 1.5rem; }
   .tl-body { padding: 1rem; }
 
   /* Awards */
