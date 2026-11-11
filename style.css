@@ -318,12 +318,22 @@ body.nav-open { overflow: hidden; }
 }
 
 .hero-headline {
-  font-size: 3.75rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.05;
   color: var(--white);
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
+}
+
+.hero-headline-accent {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--gold-light);
 }
 
 .hero-tagline {
@@ -1128,6 +1138,7 @@ footer p + p { margin-top: 0.25rem; }
 @media (max-width: 480px) {
   .section-title { font-size: 1.5rem; }
   .hero-headline { font-size: 2.25rem; }
+  .hero-headline-accent { font-size: 1.5rem; }
   .hero-stats { gap: 1.5rem; }
   .contact-grid { grid-template-columns: 1fr; }
   .repo-grid { grid-template-columns: 1fr; }
