@@ -59,11 +59,32 @@
 </head>
 <body>
 
+  <!-- Phosphor icons (regular), MIT -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-bank" viewBox="0 0 256 256"><path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"/></symbol>
+    <symbol id="i-cat" viewBox="0 0 256 256"><path d="M96,140a12,12,0,1,1-12-12A12,12,0,0,1,96,140Zm76-12a12,12,0,1,0,12,12A12,12,0,0,0,172,128Zm60-80v88c0,52.93-46.65,96-104,96S24,188.93,24,136V48A16,16,0,0,1,51.31,36.69c.14.14.26.27.38.41L69,57a111.22,111.22,0,0,1,118.1,0L204.31,37.1c.12-.14.24-.27.38-.41A16,16,0,0,1,232,48Zm-16,0-21.56,24.8A8,8,0,0,1,183.63,74,88.86,88.86,0,0,0,168,64.75V88a8,8,0,1,1-16,0V59.05a97.43,97.43,0,0,0-16-2.72V88a8,8,0,1,1-16,0V56.33a97.43,97.43,0,0,0-16,2.72V88a8,8,0,1,1-16,0V64.75A88.86,88.86,0,0,0,72.37,74a8,8,0,0,1-10.81-1.17L40,48v88c0,41.66,35.21,76,80,79.67V195.31l-13.66-13.66a8,8,0,0,1,11.32-11.31L128,180.68l10.34-10.34a8,8,0,0,1,11.32,11.31L136,195.31v20.36c44.79-3.69,80-38,80-79.67Z"/></symbol>
+    <symbol id="i-dice-five" viewBox="0 0 256 256"><path d="M192,32H64A32,32,0,0,0,32,64V192a32,32,0,0,0,32,32H192a32,32,0,0,0,32-32V64A32,32,0,0,0,192,32Zm16,160a16,16,0,0,1-16,16H64a16,16,0,0,1-16-16V64A16,16,0,0,1,64,48H192a16,16,0,0,1,16,16ZM104,92A12,12,0,1,1,92,80,12,12,0,0,1,104,92Zm72,0a12,12,0,1,1-12-12A12,12,0,0,1,176,92Zm-72,72a12,12,0,1,1-12-12A12,12,0,0,1,104,164Zm36-36a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm36,36a12,12,0,1,1-12-12A12,12,0,0,1,176,164Z"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 256 256"><path d="M116,176a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h28A8,8,0,0,1,116,176Zm60-8H148a8,8,0,0,0,0,16h28a8,8,0,0,0,0-16Zm64,48a8,8,0,0,1-8,8H24a8,8,0,0,1,0-16h8V88a8,8,0,0,1,12.8-6.4L96,120V88a8,8,0,0,1,12.8-6.4l38.74,29.05L159.1,29.74A16.08,16.08,0,0,1,174.94,16h18.12A16.08,16.08,0,0,1,208.9,29.74l15,105.13s.08.78.08,1.13v72h8A8,8,0,0,1,240,216Zm-77.86-94.4,8.53,6.4h36.11L193.06,32H174.94ZM48,208H208V144H168a8,8,0,0,1-4.8-1.6l-14.4-10.8,0,0L112,104v32a8,8,0,0,1-12.8,6.4L48,104Z"/></symbol>
+    <symbol id="i-game-controller" viewBox="0 0 256 256"><path d="M176,112H152a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM104,96H96V88a8,8,0,0,0-16,0v8H72a8,8,0,0,0,0,16h8v8a8,8,0,0,0,16,0v-8h8a8,8,0,0,0,0-16ZM241.48,200.65a36,36,0,0,1-54.94,4.81c-.12-.12-.24-.24-.35-.37L146.48,160h-37L69.81,205.09l-.35.37A36.08,36.08,0,0,1,44,216,36,36,0,0,1,8.56,173.75a.68.68,0,0,1,0-.14L24.93,89.52A59.88,59.88,0,0,1,83.89,40H172a60.08,60.08,0,0,1,59,49.25c0,.06,0,.12,0,.18l16.37,84.17a.68.68,0,0,1,0,.14A35.74,35.74,0,0,1,241.48,200.65ZM172,144a44,44,0,0,0,0-88H83.89A43.9,43.9,0,0,0,40.68,92.37l0,.13L24.3,176.59A20,20,0,0,0,58,194.3l41.92-47.59a8,8,0,0,1,6-2.71Zm59.7,32.59-8.74-45A60,60,0,0,1,172,160h-4.2L198,194.31a20.09,20.09,0,0,0,17.46,5.39,20,20,0,0,0,16.23-23.11Z"/></symbol>
+    <symbol id="i-github-logo" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></symbol>
+    <symbol id="i-graduation-cap" viewBox="0 0 256 256"><path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"/></symbol>
+    <symbol id="i-guitar" viewBox="0 0 256 256"><path d="M249.66,46.34l-40-40a8,8,0,0,0-11.31,11.32L200.69,20,140.52,80.16C117.73,68.3,92.21,69.29,76.75,84.74a42.27,42.27,0,0,0-9.39,14.37A8.24,8.24,0,0,1,59.81,104c-14.59.49-27.26,5.72-36.65,15.11C11.08,131.22,6,148.6,8.74,168.07,11.4,186.7,21.07,205.15,36,220s33.34,24.56,52,27.22A71.13,71.13,0,0,0,98.1,248c15.32,0,28.83-5.23,38.76-15.16,9.39-9.39,14.62-22.06,15.11-36.65a8.24,8.24,0,0,1,4.92-7.55,42.12,42.12,0,0,0,14.37-9.39c15.45-15.46,16.44-41,4.58-63.77L236,55.31l2.34,2.34a8,8,0,1,0,11.32-11.31ZM160,167.93a26.12,26.12,0,0,1-8.95,5.83,24.24,24.24,0,0,0-15,21.89c-.36,10.46-4,19.41-10.43,25.88-8.44,8.43-21,11.95-35.36,9.89C75,229.25,59.73,221.19,47.27,208.73S26.75,181,24.58,165.81c-2-14.37,1.46-26.92,9.89-35.36C40.94,124,49.89,120.37,60.35,120h0a24.22,24.22,0,0,0,21.89-15,26.12,26.12,0,0,1,5.83-9c5.49-5.49,13-8.13,21.38-8.13a49.38,49.38,0,0,1,19.13,4.19L108.5,112.19a32,32,0,1,0,35.31,35.31l20.08-20.08C170.41,142.71,169.47,158.41,160,167.93Zm-10.4-61.48a72.9,72.9,0,0,1,5.93,6.75l-15.42,15.42a32.22,32.22,0,0,0-12.68-12.68l15.42-15.43A73,73,0,0,1,149.55,106.45ZM112,128a16,16,0,0,1,16,16h0a16,16,0,1,1-16-16Zm48.85-32.85a86.94,86.94,0,0,0-6.68-6L176,67.31,188.69,80l-21.83,21.82A86.94,86.94,0,0,0,160.86,95.14ZM200,68.68,187.32,56,212,31.31,224.69,44ZM93.66,194.33a8,8,0,0,1-11.31,11.32l-32-32a8,8,0,0,1,11.32-11.31Z"/></symbol>
+    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol>
+    <symbol id="i-linkedin-logo" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 256 256"><path d="M216,96A88,88,0,1,0,72,163.83V240a8,8,0,0,0,11.58,7.16L128,225l44.43,22.21A8.07,8.07,0,0,0,176,248a8,8,0,0,0,8-8V163.83A87.85,87.85,0,0,0,216,96ZM56,96a72,72,0,1,1,72,72A72.08,72.08,0,0,1,56,96ZM168,227.06l-36.43-18.21a8,8,0,0,0-7.16,0L88,227.06V174.37a87.89,87.89,0,0,0,80,0ZM128,152A56,56,0,1,0,72,96,56.06,56.06,0,0,0,128,152Zm0-96A40,40,0,1,1,88,96,40,40,0,0,1,128,56Z"/></symbol>
+    <symbol id="i-medium-logo" viewBox="0 0 256 256"><path d="M72,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,72,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,72,176ZM184,64c-5.68,0-16.4,2.76-24.32,21.25C154.73,96.8,152,112,152,128s2.73,31.2,7.68,42.75C167.6,189.24,178.32,192,184,192s16.4-2.76,24.32-21.25C213.27,159.2,216,144,216,128s-2.73-31.2-7.68-42.75C200.4,66.76,189.68,64,184,64Zm0,112c-5.64,0-16-18.22-16-48s10.36-48,16-48,16,18.22,16,48S189.64,176,184,176ZM248,72V184a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Z"/></symbol>
+    <symbol id="i-newspaper-clipping" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,11.58,7.15L64,208.94l28.42,14.21a8,8,0,0,0,7.16,0L128,208.94l28.42,14.21a8,8,0,0,0,7.16,0L192,208.94l28.42,14.21A8,8,0,0,0,232,216V56A16,16,0,0,0,216,40Zm0,163.06-20.42-10.22a8,8,0,0,0-7.16,0L160,207.06l-28.42-14.22a8,8,0,0,0-7.16,0L96,207.06,67.58,192.84a8,8,0,0,0-7.16,0L40,203.06V56H216ZM136,112a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,112Zm0,32a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,144ZM64,168h48a8,8,0,0,0,8-8V96a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8v64A8,8,0,0,0,64,168Zm8-64h32v48H72Z"/></symbol>
+    <symbol id="i-soccer-ball" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm76.52,147.42H170.9l-9.26-12.76,12.63-36.78,15-4.89,26.24,20.13A87.38,87.38,0,0,1,204.52,171.42Zm-164-34.3L66.71,117l15,4.89,12.63,36.78L85.1,171.42H51.48A87.38,87.38,0,0,1,40.47,137.12Zm10-50.64,5.51,18.6L40.71,116.77A87.33,87.33,0,0,1,50.43,86.48ZM109,152,97.54,118.65,128,97.71l30.46,20.94L147,152Zm91.07-46.92,5.51-18.6a87.33,87.33,0,0,1,9.72,30.29Zm-6.2-35.38-9.51,32.08-15.07,4.89L136,83.79V68.21l29.09-20A88.58,88.58,0,0,1,193.86,69.7ZM146.07,41.87,128,54.29,109.93,41.87a88.24,88.24,0,0,1,36.14,0ZM90.91,48.21l29.09,20V83.79L86.72,106.67l-15.07-4.89L62.14,69.7A88.58,88.58,0,0,1,90.91,48.21ZM63.15,187.42H83.52l7.17,20.27A88.4,88.4,0,0,1,63.15,187.42ZM110,214.13,98.12,180.71,107.35,168h41.3l9.23,12.71-11.83,33.42a88,88,0,0,1-36.1,0Zm55.36-6.44,7.17-20.27h20.37A88.4,88.4,0,0,1,165.31,207.69Z"/></symbol>
+    <symbol id="i-tiktok-logo" viewBox="0 0 256 256"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 256 256"><path d="M232,64H208V48a8,8,0,0,0-8-8H56a8,8,0,0,0-8,8V64H24A16,16,0,0,0,8,80V96a40,40,0,0,0,40,40h3.65A80.13,80.13,0,0,0,120,191.61V216H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V191.58c31.94-3.23,58.44-25.64,68.08-55.58H208a40,40,0,0,0,40-40V80A16,16,0,0,0,232,64ZM48,120A24,24,0,0,1,24,96V80H48v32q0,4,.39,8Zm144-8.9c0,35.52-29,64.64-64,64.9a64,64,0,0,1-64-64V56H192ZM232,96a24,24,0,0,1-24,24h-.5a81.81,81.81,0,0,0,.5-8.9V80h24Z"/></symbol>
+  </svg>
+
   <!-- ── NAVIGATION ───────────────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">Michael Donoser</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
@@ -114,7 +135,7 @@
             <div class="initials-fallback">MD</div>
           </div>
         </div>
-        <p class="hero-location">&#128205; Berlin, Germany</p>
+        <p class="hero-location"><svg class="ico" aria-hidden="true"><use href="#i-map-pin"/></svg> Berlin, Germany</p>
       </div>
     </div>
     <div class="hero-scroll-hint">
@@ -366,33 +387,33 @@
       <div class="awards-grid">
         <div class="award-card">
           <div class="award-year">2008</div>
-          <div class="award-icon">&#127885;</div>
+          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
           <h3>Josef-Krainer F&ouml;rderungspreis</h3>
           <p>Awarded by the State Government of Styria (Austria) for outstanding early-career scientific achievement.</p>
           <a href="https://www.steirisches-gedenkwerk.at/josef-krainer-preise-2008/" target="_blank" rel="noopener" class="award-photo-link">Link to Article (German) &rarr;</a>
         </div>
         <div class="award-card">
           <div class="award-year">2008</div>
-          <div class="award-icon">&#129351;</div>
+          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
           <h3>Best Scientific Paper Award</h3>
           <p>International Conference on Pattern Recognition (ICPR), <em>"Using Web Search Engines to Improve Text Recognition"</em></p>
           <a href="https://iapr.org/archives/icpr2008/photos3/Best%20Paper%20Awards/images/2008_iapr_tampa_031.jpg" target="_blank" rel="noopener" class="award-photo-link">View award photo &rarr;</a>
         </div>
         <div class="award-card">
           <div class="award-year">2009</div>
-          <div class="award-icon">&#129351;</div>
+          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
           <h3>Best Scientific Paper Award</h3>
           <p>OAGM/AAPR Workshop, <em>"Finding Stable Extremal Region Boundaries"</em></p>
         </div>
         <div class="award-card">
           <div class="award-year">2010</div>
-          <div class="award-icon">&#129351;</div>
+          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
           <h3>Best Scientific Paper Award</h3>
           <p>OAGM/AAPR Workshop, <em>"MSER Templates for 3D Pose Tracking"</em></p>
         </div>
         <div class="award-card">
           <div class="award-year">2012</div>
-          <div class="award-icon">&#129351;</div>
+          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
           <h3>Best Scientific Paper Award</h3>
           <p>Asian Conference on Computer Vision (ACCV): <em>"Detecting Partially Occluded Objects with an Implicit Shape Model Random Field"</em></p>
         </div>
@@ -546,7 +567,7 @@
             <span class="conf-pill">4 papers</span>
           </div>
           <p class="conf-fullname">Asian Conference on Computer Vision</p>
-          <span class="conf-award-tag">&#127942; Best Paper Award 2012</span>
+          <span class="conf-award-tag"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg> Best Paper Award 2012</span>
           <p class="conf-fact">Premier Asian venue &middot; rigorous peer review</p>
         </div>
 
@@ -565,7 +586,7 @@
             <span class="conf-pill">2 papers</span>
           </div>
           <p class="conf-fullname">Austrian Workshop on Computer Vision</p>
-          <span class="conf-award-tag">&#127942; 2&times; Best Paper Award</span>
+          <span class="conf-award-tag"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg> 2&times; Best Paper Award</span>
           <p class="conf-fact">Largest CV conference in Austria &middot; running since 1981 &middot; 43+ editions</p>
         </div>
 
@@ -575,7 +596,7 @@
             <span class="conf-pill">12 papers</span>
           </div>
           <p class="conf-fullname">International Conference on Pattern Recognition</p>
-          <span class="conf-award-tag">&#127942; Best Paper Award 2008</span>
+          <span class="conf-award-tag"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg> Best Paper Award 2008</span>
           <p class="conf-fact">IEEE&rsquo;s flagship pattern recognition venue &middot; biennial &middot; running since 1973</p>
         </div>
 
@@ -770,7 +791,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#127963;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg></span>
               <span class="repo-lang">TypeScript</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -784,7 +805,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#127922;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-dice-five"/></svg></span>
               <span class="repo-lang">TypeScript</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -798,7 +819,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#127918;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-game-controller"/></svg></span>
               <span class="repo-lang">Python</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -812,7 +833,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#127942;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>
               <span class="repo-lang">TypeScript</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -826,7 +847,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#127981;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></span>
               <span class="repo-lang">JavaScript</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -840,7 +861,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#9917;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-soccer-ball"/></svg></span>
               <span class="repo-lang">JavaScript</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -854,7 +875,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#128568;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-cat"/></svg></span>
               <span class="repo-lang">JavaScript</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -868,7 +889,7 @@
           </div>
           <div class="repo-body">
             <div class="repo-header">
-              <span class="repo-icon">&#127928;</span>
+              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-guitar"/></svg></span>
               <span class="repo-lang">JavaScript</span>
               <span class="repo-link-badge demo">Live Demo</span>
             </div>
@@ -921,37 +942,37 @@
       <p class="section-subtitle">Explore my work, publications, and professional background across these platforms.</p>
       <div class="contact-grid">
         <a href="https://www.linkedin.com/in/michael-donoser-17449458/" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon">&#128188;</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-linkedin-logo"/></svg></div>
           <span class="contact-label">LinkedIn</span>
           <span class="contact-val">michael-donoser</span>
         </a>
         <a href="https://substack.com/@michaeldonoser" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon">&#128240;</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-newspaper-clipping"/></svg></div>
           <span class="contact-label">Substack</span>
           <span class="contact-val">@michaeldonoser</span>
         </a>
         <a href="https://www.instagram.com/michaeldonoser/" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon">&#128247;</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-instagram-logo"/></svg></div>
           <span class="contact-label">Instagram</span>
           <span class="contact-val">@michaeldonoser</span>
         </a>
         <a href="https://www.tiktok.com/@michaeldonoser" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon">&#127909;</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-tiktok-logo"/></svg></div>
           <span class="contact-label">TikTok</span>
           <span class="contact-val">@michaeldonoser</span>
         </a>
         <a href="https://medium.com/@michael.donoser" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon">&#9997;</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-medium-logo"/></svg></div>
           <span class="contact-label">Medium</span>
           <span class="contact-val">@michael.donoser</span>
         </a>
         <a href="https://github.com/mike-dono-0815" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon">&#128187;</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-github-logo"/></svg></div>
           <span class="contact-label">GitHub</span>
           <span class="contact-val">mike-dono-0815</span>
         </a>
         <a href="https://scholar.google.com/citations?user=zuYS1cQAAAAJ&hl=en" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon">&#127891;</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-graduation-cap"/></svg></div>
           <span class="contact-label">Google Scholar</span>
           <span class="contact-val">h-index 27</span>
         </a>
