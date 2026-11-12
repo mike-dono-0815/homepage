@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Donoser, Ph.D. | Author of The Leadership Fork</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Donoser, Ph.D. | Author of The Leadership Fork</title>
   <meta name="description" content="Michael Donoser, former Director of Science at Amazon, is writing The Leadership Fork: 55 mechanisms for leading when the playbook stops working. Subscribe to the biweekly newsletter.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="canonical" href="https://mike-dono-0815.github.io/homepage/">
@@ -32,7 +32,7 @@
     "@type": "Person",
     "name": "Michael Donoser",
     "honorificSuffix": "Ph.D.",
-    "jobTitle": "Author",
+    "jobTitle": "Author and Leadership Coach",
     "description": "Author of The Leadership Fork and former Director of Science at Amazon.",
     "alumniOf": [
       { "@type": "Organization", "name": "Amazon" },
@@ -53,716 +53,754 @@
   }
   </script>
 
-  <link rel="preload" href="fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Geist'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('fonts/geist-latin.woff2') format('woff2'); }
+@font-face { font-family: 'Geist Mono'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('fonts/geist-mono-latin.woff2') format('woff2'); }
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --bg: #131209;
+  --surface: #181818;
+  --card: #1F1F1F;
+  --raised: #272727;
+  --line: #313131;
+  --text: #F5F5F0;
+  --muted: #A8A8A0;
+  --gold: #E8AC20;
+  --gold-soft: rgba(232, 172, 32, 0.14);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sans: 'Geist', system-ui, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --max: 1120px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 1rem; line-height: 1.5rem; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 { text-wrap: balance; font-weight: 600; }
+p { text-wrap: pretty; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+.mono { font-family: var(--mono); font-size: 0.75rem; line-height: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono-gold { color: var(--gold); }
+.nowrap { white-space: nowrap; }
+.skip-link { position: absolute; top: 16px; left: 16px; z-index: 200; padding: 0.5rem 0.75rem; border-radius: 9999px; background: var(--gold); color: var(--bg); font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; transform: translateY(-80px); transition: transform 500ms var(--ease); }
+.skip-link:focus { transform: none; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* ── BUTTONS ────────────────────────────────────────── */
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 1rem; line-height: 1.5rem; font-weight: 600; text-decoration: none; transition: background-color 300ms var(--ease), transform 500ms var(--ease); }
+.btn:active { transform: scale(0.98); }
+.btn-gold { background: var(--gold); color: var(--bg); }
+.btn-gold:hover { background: #F2C35A; }
+.link-quiet { color: var(--muted); font-size: 0.875rem; line-height: 1.25rem; text-decoration: none; transition: color 300ms var(--ease); }
+.link-quiet:hover { color: var(--text); }
+
+/* ── NAV ────────────────────────────────────────────── */
+.nav-wrap { position: fixed; top: 16px; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 0 16px; pointer-events: none; }
+.nav { pointer-events: auto; display: flex; align-items: center; gap: 1.5rem; padding: 0.5rem 0.5rem 0.5rem 1.5rem; border: 1px solid var(--line); border-radius: 9999px; position: relative; isolation: isolate; }
+.nav::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: rgba(31, 31, 31, 0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-brand { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.nav-links { display: flex; gap: 0.25rem; list-style: none; }
+.nav-links a { display: block; padding: 0.5rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 300ms var(--ease), background-color 300ms var(--ease); }
+.nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+.nav .btn { padding: 0.5rem 1rem; font-size: 0.875rem; line-height: 1.25rem; }
+@media (max-width: 1000px) { .nav-links { display: none; } .nav { gap: 1rem; } }
+
+/* ── SECTIONS ───────────────────────────────────────── */
+section { padding: 6rem 0; }
+.band { background: var(--surface); }
+.section-head { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 3rem; max-width: 680px; }
+.section-head h2 { font-size: 2.25rem; line-height: 2.5rem; letter-spacing: -0.02em; }
+.section-head p { color: var(--muted); font-size: 1.125rem; line-height: 1.75rem; }
+
+/* ── HERO ───────────────────────────────────────────── */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 0 5rem; text-align: center; }
+.hero .container { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.hero-face { width: 112px; height: 112px; border-radius: 9999px; object-fit: cover; border: 2px solid var(--line); }
+.hero h1 { max-width: 900px; font-size: 3.75rem; line-height: 1; letter-spacing: -0.03em; background: linear-gradient(90deg, #FFFFFF, #9B9B9B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-role { margin-top: -0.5rem; font-size: 1.25rem; line-height: 1.75rem; font-weight: 500; color: var(--text); text-wrap: balance; }
+.hero-book { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 1.5rem; align-items: center; max-width: 640px; margin-top: 1rem; padding: 1.5rem; text-align: left; text-decoration: none; background: var(--card); border: 1px solid rgba(232,172,32,0.5); border-radius: 24px; transition: border-color 300ms var(--ease), transform 500ms var(--ease); }
+.hero-book:hover { border-color: var(--gold); transform: translateY(-2px); }
+.hero-book { position: relative; padding-right: 4rem; }
+.sticker { position: absolute; top: -32px; right: -32px; z-index: 1; width: 88px; height: 88px; display: grid; place-content: center; gap: 0.125rem; border-radius: 9999px; background: var(--gold); color: var(--bg); text-align: center; transform: rotate(12deg); box-shadow: 0 8px 24px rgba(0,0,0,0.45); transition: transform 500ms var(--ease); }
+.sticker::before { content: ''; position: absolute; inset: 4px; border-radius: inherit; border: 1px dashed rgba(19,18,9,0.45); }
+.sticker small { font-family: var(--mono); font-size: 0.625rem; line-height: 0.75rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.sticker strong { font-size: 1rem; line-height: 1.125rem; font-weight: 700; }
+.hero-book:hover .sticker { transform: rotate(4deg) scale(1.06); }
+.hero-cta .note strong { color: var(--gold); font-weight: 600; }
+.hero-book img { width: 96px; border-radius: 4px; transform: rotate(-3deg); box-shadow: 0 12px 32px rgba(0,0,0,0.5); }
+.hero-book-text { display: flex; flex-direction: column; gap: 0.5rem; }
+.hero-hook { font-size: 1.5rem; line-height: 2rem; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+.hero-hook-accent { font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; color: var(--gold); }
+.hero .lead { max-width: 720px; color: var(--muted); font-size: 1.125rem; line-height: 1.75rem; text-wrap: balance; }
+.hero-cta { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
+.hero-cta .note { font-size: 0.875rem; line-height: 1.25rem; color: var(--text); opacity: 0.8; max-width: 420px; text-wrap: balance; }
+.hero-links { display: flex; gap: 1.5rem; }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.25rem; line-height: 2.5rem; }
+  .hero-role { font-size: 1.125rem; line-height: 1.75rem; }
+  .hero-book { grid-template-columns: 72px minmax(0, 1fr); gap: 1rem; padding: 1rem 2.5rem 1rem 1rem; }
+  .hero-book img { width: 72px; }
+  .sticker { top: -28px; right: -8px; width: 72px; height: 72px; }
+  .sticker strong { font-size: 0.875rem; line-height: 1rem; }
+  .hero-hook { font-size: 1.25rem; line-height: 1.75rem; }
+  .hero-hook-accent { font-size: 1rem; line-height: 1.5rem; }
+}
+
+/* ── TWO TRACKS ─────────────────────────────────────── */
+.tracks { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 96px minmax(0, 1fr); }
+.track { display: flex; flex-direction: column; gap: 1rem; }
+.track-research { padding-right: 1.5rem; }
+.track-industry { padding-left: 1.5rem; }
+.track-label { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.track-label .dot { width: 8px; height: 8px; border-radius: 9999px; }
+.track-research .dot { background: #8FB4D9; }
+.track-industry .dot { background: var(--gold); }
+.spine { position: relative; display: flex; justify-content: center; }
+.spine::before { content: ''; position: absolute; top: 0; bottom: 0; width: 2px; background: var(--line); transform-origin: top; transform: scaleY(var(--spine-progress, 1)); }
+.spine-years { position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: center; height: 100%; padding: 0.25rem 0; }
+.spine-years span { font-family: var(--mono); font-size: 0.75rem; line-height: 1rem; color: var(--muted); background: var(--bg); padding: 0.25rem 0.5rem; border-radius: 9999px; border: 1px solid var(--line); }
+.t-card { padding: 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; gap: 0.5rem; transition: border-color 300ms var(--ease), transform 500ms var(--ease); }
+.t-card:hover { border-color: #4A4A44; transform: translateY(-2px); }
+.t-card h3 { font-size: 1.25rem; line-height: 1.75rem; }
+.t-card p { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.t-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; padding-top: 0.75rem; margin-top: 0.25rem; border-top: 1px solid var(--line); }
+.t-card .t-links a { color: var(--text); text-decoration: none; transition: color 300ms var(--ease); }
+.t-card .t-links a::after { content: ' →'; color: #8FB4D9; }
+.t-card .t-links a:hover { color: #8FB4D9; }
+.t-card .when { font-family: var(--mono); font-size: 0.75rem; line-height: 1rem; }
+.track-research .when { color: #8FB4D9; }
+.track-industry .when { color: var(--gold); }
+.t-card.highlight { background: var(--raised); border-color: rgba(232,172,32,0.5); }
+.t-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+.t-stats div { display: flex; flex-direction: column; }
+.t-stats strong { font-family: var(--mono); font-size: 1.875rem; line-height: 2.25rem; font-weight: 500; }
+.t-stats span { font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+
+.merge { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+.merge svg { width: 100%; max-width: 560px; height: 96px; overflow: visible; }
+.merge .path { fill: none; stroke-width: 2; stroke-dasharray: 400; stroke-dashoffset: var(--merge-dash, 0); transition: stroke-dashoffset 1200ms var(--ease); }
+.merge .path-research { stroke: #8FB4D9; }
+.merge .path-industry { stroke: var(--gold); }
+.merge .meet { fill: var(--gold); }
+.merge h3 { max-width: 680px; font-size: 2.25rem; line-height: 2.5rem; letter-spacing: -0.02em; }
+.merge h3 .dim { color: var(--muted); }
+.merge p { max-width: 560px; color: var(--muted); font-size: 1.125rem; line-height: 1.75rem; }
+
+@media (max-width: 860px) {
+  .tracks { grid-template-columns: 1fr; gap: 3rem; }
+  .spine { display: none; }
+  .track-research, .track-industry { padding: 0; }
+  .merge svg { display: none; }
+  .merge { margin-top: 4rem; }
+}
+
+/* ── BOOK ───────────────────────────────────────────── */
+.book { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 4rem; align-items: start; }
+.book-cover { position: sticky; top: 112px; border-radius: 8px; box-shadow: 0 24px 64px rgba(0,0,0,0.5); transform: rotate(-2deg); transition: transform 500ms var(--ease); }
+.book-cover:hover { transform: rotate(0deg) translateY(-4px); }
+.chapters { list-style: none; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.chapters > li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+.chapters .num { font-family: var(--mono); font-size: 0.875rem; line-height: 1.75rem; color: var(--gold); }
+.ch-body { display: flex; flex-direction: column; gap: 0.5rem; }
+.ch-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; }
+.ch-head strong { font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; }
+.ch-head .mono { color: var(--gold); }
+.ch-story { font-size: 1rem; line-height: 1.5rem; color: var(--text); }
+.book-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2rem; }
+@media (max-width: 860px) { .book { grid-template-columns: 1fr; gap: 2rem; } .book-cover { position: static; max-width: 220px; } }
+
+/* ── NEWSLETTER ─────────────────────────────────────── */
+.nl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 4rem; align-items: center; }
+.nl-story { display: flex; flex-direction: column; gap: 1.5rem; }
+.nl-story p { color: var(--muted); font-size: 1.125rem; line-height: 1.75rem; }
+.nl-story strong { color: var(--text); font-weight: 600; }
+.nl-card { padding: 2rem; background: var(--card); border: 1px solid rgba(232,172,32,0.5); border-radius: 24px; display: flex; flex-direction: column; gap: 1rem; }
+.nl-card h3 { font-size: 1.5rem; line-height: 2rem; }
+.nl-card p { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.nl-card .gift { color: var(--gold); font-weight: 600; }
+.nl-embed { border-radius: 8px; overflow: hidden; background: #fff; }
+.nl-embed iframe { display: block; width: 100%; height: 320px; border: 0; }
+@media (max-width: 860px) { .nl { grid-template-columns: 1fr; gap: 2rem; } .nl-card { order: -1; padding: 1.5rem; } }
+
+/* ── WRITING ────────────────────────────────────────── */
+.posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.post { padding: 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; gap: 0.75rem; text-decoration: none; transition: border-color 300ms var(--ease), transform 500ms var(--ease); }
+.post:hover { border-color: rgba(232,172,32,0.5); transform: translateY(-2px); }
+.post h3 { font-size: 1.125rem; line-height: 1.75rem; }
+.post p { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); flex: 1; }
+.post .more { font-size: 0.875rem; line-height: 1.25rem; color: var(--gold); font-weight: 500; }
+@media (max-width: 860px) { .posts { grid-template-columns: 1fr; } }
+
+/* ── VENUES (inside research record card) ───────────── */
+.venues { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--line); list-style: none; }
+.venues li { display: inline-flex; align-items: baseline; gap: 0.25rem; padding: 0.25rem 0.5rem; border: 1px solid var(--line); border-radius: 9999px; font-family: var(--mono); font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+.venues b { color: var(--text); font-weight: 500; }
+.venues .award { border-color: rgba(143,180,217,0.5); }
+.venues .award::after { content: '★'; color: #8FB4D9; }
+.launches { margin-top: 0; padding-top: 0; border-top: 0; }
+.launches li { font-family: var(--sans); color: var(--text); border-color: rgba(232,172,32,0.35); }
+.t-card .launches-label { font-size: 0.75rem; line-height: 1rem; color: var(--gold); margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.venues-note { font-size: 0.75rem !important; line-height: 1rem !important; }
+
+/* ── LEADERSHIP PILLARS ─────────────────────────────── */
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.pillar { padding: 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 300ms var(--ease), transform 500ms var(--ease); }
+.pillar:hover { border-color: rgba(232,172,32,0.5); transform: translateY(-2px); }
+.pillar-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--gold-soft); color: var(--gold); }
+.pillar h3 { font-size: 1.125rem; line-height: 1.75rem; }
+.pillar > p { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); flex: 1; }
+.pillar-links { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.pillar-links a { font-size: 0.875rem; line-height: 1.25rem; color: var(--text); text-decoration: none; transition: color 300ms var(--ease); }
+.pillar-links a::after { content: ' \2192'; color: var(--gold); }
+.pillar-links a:hover { color: var(--gold); }
+@media (max-width: 960px) { .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .pillars { grid-template-columns: 1fr; } }
+
+/* ── PROJECTS ───────────────────────────────────────── */
+.projects-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.5rem; margin-bottom: 3rem; }
+.projects-head .section-head { margin-bottom: 0; }
+.projects { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.project { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; text-decoration: none; transition: border-color 300ms var(--ease), transform 500ms var(--ease); }
+.project:hover { border-color: rgba(232,172,32,0.5); transform: translateY(-2px); }
+.project-thumb { aspect-ratio: 5 / 4; padding: 0.75rem; display: flex; align-items: center; justify-content: center; background: var(--raised); overflow: hidden; }
+.project-thumb img { max-width: 100%; max-height: 100%; width: auto; height: auto; min-height: 0; border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 500ms var(--ease); }
+.project:hover .project-thumb img { transform: scale(1.04); }
+.project-body { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem 1rem 1.5rem; flex: 1; }
+.project-meta { display: flex; justify-content: space-between; gap: 0.5rem; }
+.project-meta .demo { color: var(--gold); }
+.project h3 { font-family: var(--mono); font-size: 1rem; line-height: 1.5rem; font-weight: 500; }
+.project p { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.project-multi { position: relative; }
+.project-multi h3 a { text-decoration: none; }
+.project-multi .stretch::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+.project-story { position: relative; z-index: 1; margin-top: auto; padding-top: 0.5rem; font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; color: var(--gold); text-decoration: none; }
+.project-story:hover { text-decoration: underline; }
+.project-multi:focus-within { border-color: rgba(232,172,32,0.5); }
+@media (max-width: 960px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .projects { grid-template-columns: 1fr; } }
+
+/* ── CONTACT + FOOTER ───────────────────────────────── */
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.links a { padding: 0.5rem 1rem; border: 1px solid var(--line); border-radius: 9999px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); text-decoration: none; transition: color 300ms var(--ease), border-color 300ms var(--ease); }
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.socials { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.75rem; }
+.social { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.5rem 0.75rem; text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; transition: border-color 300ms var(--ease), transform 500ms var(--ease); }
+.social:hover { border-color: rgba(232,172,32,0.5); transform: translateY(-2px); }
+.social-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 9999px; background: var(--gold-soft); color: var(--gold); transition: background-color 300ms var(--ease), color 300ms var(--ease); }
+.social-icon svg { width: 24px; height: 24px; fill: currentColor; }
+.social:hover .social-icon { background: var(--gold); color: var(--bg); }
+.social-name { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+.social-handle { font-size: 0.75rem; line-height: 1rem; color: var(--muted); overflow-wrap: anywhere; }
+@media (max-width: 960px) { .socials { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .socials { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+footer { padding: 2rem 0 4rem; border-top: 1px solid var(--line); }
+footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+footer a { color: var(--muted); }
+
+/* ── REVEAL ─────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transform: none; transition: opacity 600ms var(--ease); }
+  .merge .path { transition: none; }
+  *, *::before, *::after { transition-property: opacity, color, background-color, border-color !important; }
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#hero">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-linkedin-logo" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></symbol>
+<symbol id="i-newspaper-clipping" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,11.58,7.15L64,208.94l28.42,14.21a8,8,0,0,0,7.16,0L128,208.94l28.42,14.21a8,8,0,0,0,7.16,0L192,208.94l28.42,14.21A8,8,0,0,0,232,216V56A16,16,0,0,0,216,40Zm0,163.06-20.42-10.22a8,8,0,0,0-7.16,0L160,207.06l-28.42-14.22a8,8,0,0,0-7.16,0L96,207.06,67.58,192.84a8,8,0,0,0-7.16,0L40,203.06V56H216ZM136,112a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,112Zm0,32a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,144ZM64,168h48a8,8,0,0,0,8-8V96a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8v64A8,8,0,0,0,64,168Zm8-64h32v48H72Z"/></symbol>
+<symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol>
+<symbol id="i-tiktok-logo" viewBox="0 0 256 256"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"/></symbol>
+<symbol id="i-medium-logo" viewBox="0 0 256 256"><path d="M72,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,72,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,72,176ZM184,64c-5.68,0-16.4,2.76-24.32,21.25C154.73,96.8,152,112,152,128s2.73,31.2,7.68,42.75C167.6,189.24,178.32,192,184,192s16.4-2.76,24.32-21.25C213.27,159.2,216,144,216,128s-2.73-31.2-7.68-42.75C200.4,66.76,189.68,64,184,64Zm0,112c-5.64,0-16-18.22-16-48s10.36-48,16-48,16,18.22,16,48S189.64,176,184,176ZM248,72V184a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Z"/></symbol>
+<symbol id="i-github-logo" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></symbol>
+<symbol id="i-graduation-cap" viewBox="0 0 256 256"><path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"/></symbol>
+</svg>
 
-  <!-- Phosphor icons (regular), MIT -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-bank" viewBox="0 0 256 256"><path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"/></symbol>
-    <symbol id="i-cat" viewBox="0 0 256 256"><path d="M96,140a12,12,0,1,1-12-12A12,12,0,0,1,96,140Zm76-12a12,12,0,1,0,12,12A12,12,0,0,0,172,128Zm60-80v88c0,52.93-46.65,96-104,96S24,188.93,24,136V48A16,16,0,0,1,51.31,36.69c.14.14.26.27.38.41L69,57a111.22,111.22,0,0,1,118.1,0L204.31,37.1c.12-.14.24-.27.38-.41A16,16,0,0,1,232,48Zm-16,0-21.56,24.8A8,8,0,0,1,183.63,74,88.86,88.86,0,0,0,168,64.75V88a8,8,0,1,1-16,0V59.05a97.43,97.43,0,0,0-16-2.72V88a8,8,0,1,1-16,0V56.33a97.43,97.43,0,0,0-16,2.72V88a8,8,0,1,1-16,0V64.75A88.86,88.86,0,0,0,72.37,74a8,8,0,0,1-10.81-1.17L40,48v88c0,41.66,35.21,76,80,79.67V195.31l-13.66-13.66a8,8,0,0,1,11.32-11.31L128,180.68l10.34-10.34a8,8,0,0,1,11.32,11.31L136,195.31v20.36c44.79-3.69,80-38,80-79.67Z"/></symbol>
-    <symbol id="i-dice-five" viewBox="0 0 256 256"><path d="M192,32H64A32,32,0,0,0,32,64V192a32,32,0,0,0,32,32H192a32,32,0,0,0,32-32V64A32,32,0,0,0,192,32Zm16,160a16,16,0,0,1-16,16H64a16,16,0,0,1-16-16V64A16,16,0,0,1,64,48H192a16,16,0,0,1,16,16ZM104,92A12,12,0,1,1,92,80,12,12,0,0,1,104,92Zm72,0a12,12,0,1,1-12-12A12,12,0,0,1,176,92Zm-72,72a12,12,0,1,1-12-12A12,12,0,0,1,104,164Zm36-36a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm36,36a12,12,0,1,1-12-12A12,12,0,0,1,176,164Z"/></symbol>
-    <symbol id="i-factory" viewBox="0 0 256 256"><path d="M116,176a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h28A8,8,0,0,1,116,176Zm60-8H148a8,8,0,0,0,0,16h28a8,8,0,0,0,0-16Zm64,48a8,8,0,0,1-8,8H24a8,8,0,0,1,0-16h8V88a8,8,0,0,1,12.8-6.4L96,120V88a8,8,0,0,1,12.8-6.4l38.74,29.05L159.1,29.74A16.08,16.08,0,0,1,174.94,16h18.12A16.08,16.08,0,0,1,208.9,29.74l15,105.13s.08.78.08,1.13v72h8A8,8,0,0,1,240,216Zm-77.86-94.4,8.53,6.4h36.11L193.06,32H174.94ZM48,208H208V144H168a8,8,0,0,1-4.8-1.6l-14.4-10.8,0,0L112,104v32a8,8,0,0,1-12.8,6.4L48,104Z"/></symbol>
-    <symbol id="i-game-controller" viewBox="0 0 256 256"><path d="M176,112H152a8,8,0,0,1,0-16h24a8,8,0,0,1,0,16ZM104,96H96V88a8,8,0,0,0-16,0v8H72a8,8,0,0,0,0,16h8v8a8,8,0,0,0,16,0v-8h8a8,8,0,0,0,0-16ZM241.48,200.65a36,36,0,0,1-54.94,4.81c-.12-.12-.24-.24-.35-.37L146.48,160h-37L69.81,205.09l-.35.37A36.08,36.08,0,0,1,44,216,36,36,0,0,1,8.56,173.75a.68.68,0,0,1,0-.14L24.93,89.52A59.88,59.88,0,0,1,83.89,40H172a60.08,60.08,0,0,1,59,49.25c0,.06,0,.12,0,.18l16.37,84.17a.68.68,0,0,1,0,.14A35.74,35.74,0,0,1,241.48,200.65ZM172,144a44,44,0,0,0,0-88H83.89A43.9,43.9,0,0,0,40.68,92.37l0,.13L24.3,176.59A20,20,0,0,0,58,194.3l41.92-47.59a8,8,0,0,1,6-2.71Zm59.7,32.59-8.74-45A60,60,0,0,1,172,160h-4.2L198,194.31a20.09,20.09,0,0,0,17.46,5.39,20,20,0,0,0,16.23-23.11Z"/></symbol>
-    <symbol id="i-github-logo" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></symbol>
-    <symbol id="i-graduation-cap" viewBox="0 0 256 256"><path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"/></symbol>
-    <symbol id="i-guitar" viewBox="0 0 256 256"><path d="M249.66,46.34l-40-40a8,8,0,0,0-11.31,11.32L200.69,20,140.52,80.16C117.73,68.3,92.21,69.29,76.75,84.74a42.27,42.27,0,0,0-9.39,14.37A8.24,8.24,0,0,1,59.81,104c-14.59.49-27.26,5.72-36.65,15.11C11.08,131.22,6,148.6,8.74,168.07,11.4,186.7,21.07,205.15,36,220s33.34,24.56,52,27.22A71.13,71.13,0,0,0,98.1,248c15.32,0,28.83-5.23,38.76-15.16,9.39-9.39,14.62-22.06,15.11-36.65a8.24,8.24,0,0,1,4.92-7.55,42.12,42.12,0,0,0,14.37-9.39c15.45-15.46,16.44-41,4.58-63.77L236,55.31l2.34,2.34a8,8,0,1,0,11.32-11.31ZM160,167.93a26.12,26.12,0,0,1-8.95,5.83,24.24,24.24,0,0,0-15,21.89c-.36,10.46-4,19.41-10.43,25.88-8.44,8.43-21,11.95-35.36,9.89C75,229.25,59.73,221.19,47.27,208.73S26.75,181,24.58,165.81c-2-14.37,1.46-26.92,9.89-35.36C40.94,124,49.89,120.37,60.35,120h0a24.22,24.22,0,0,0,21.89-15,26.12,26.12,0,0,1,5.83-9c5.49-5.49,13-8.13,21.38-8.13a49.38,49.38,0,0,1,19.13,4.19L108.5,112.19a32,32,0,1,0,35.31,35.31l20.08-20.08C170.41,142.71,169.47,158.41,160,167.93Zm-10.4-61.48a72.9,72.9,0,0,1,5.93,6.75l-15.42,15.42a32.22,32.22,0,0,0-12.68-12.68l15.42-15.43A73,73,0,0,1,149.55,106.45ZM112,128a16,16,0,0,1,16,16h0a16,16,0,1,1-16-16Zm48.85-32.85a86.94,86.94,0,0,0-6.68-6L176,67.31,188.69,80l-21.83,21.82A86.94,86.94,0,0,0,160.86,95.14ZM200,68.68,187.32,56,212,31.31,224.69,44ZM93.66,194.33a8,8,0,0,1-11.31,11.32l-32-32a8,8,0,0,1,11.32-11.31Z"/></symbol>
-    <symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol>
-    <symbol id="i-linkedin-logo" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></symbol>
-    <symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol>
-    <symbol id="i-medal" viewBox="0 0 256 256"><path d="M216,96A88,88,0,1,0,72,163.83V240a8,8,0,0,0,11.58,7.16L128,225l44.43,22.21A8.07,8.07,0,0,0,176,248a8,8,0,0,0,8-8V163.83A87.85,87.85,0,0,0,216,96ZM56,96a72,72,0,1,1,72,72A72.08,72.08,0,0,1,56,96ZM168,227.06l-36.43-18.21a8,8,0,0,0-7.16,0L88,227.06V174.37a87.89,87.89,0,0,0,80,0ZM128,152A56,56,0,1,0,72,96,56.06,56.06,0,0,0,128,152Zm0-96A40,40,0,1,1,88,96,40,40,0,0,1,128,56Z"/></symbol>
-    <symbol id="i-medium-logo" viewBox="0 0 256 256"><path d="M72,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,72,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,72,176ZM184,64c-5.68,0-16.4,2.76-24.32,21.25C154.73,96.8,152,112,152,128s2.73,31.2,7.68,42.75C167.6,189.24,178.32,192,184,192s16.4-2.76,24.32-21.25C213.27,159.2,216,144,216,128s-2.73-31.2-7.68-42.75C200.4,66.76,189.68,64,184,64Zm0,112c-5.64,0-16-18.22-16-48s10.36-48,16-48,16,18.22,16,48S189.64,176,184,176ZM248,72V184a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Z"/></symbol>
-    <symbol id="i-newspaper-clipping" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,11.58,7.15L64,208.94l28.42,14.21a8,8,0,0,0,7.16,0L128,208.94l28.42,14.21a8,8,0,0,0,7.16,0L192,208.94l28.42,14.21A8,8,0,0,0,232,216V56A16,16,0,0,0,216,40Zm0,163.06-20.42-10.22a8,8,0,0,0-7.16,0L160,207.06l-28.42-14.22a8,8,0,0,0-7.16,0L96,207.06,67.58,192.84a8,8,0,0,0-7.16,0L40,203.06V56H216ZM136,112a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,112Zm0,32a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H144A8,8,0,0,1,136,144ZM64,168h48a8,8,0,0,0,8-8V96a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8v64A8,8,0,0,0,64,168Zm8-64h32v48H72Z"/></symbol>
-    <symbol id="i-soccer-ball" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm76.52,147.42H170.9l-9.26-12.76,12.63-36.78,15-4.89,26.24,20.13A87.38,87.38,0,0,1,204.52,171.42Zm-164-34.3L66.71,117l15,4.89,12.63,36.78L85.1,171.42H51.48A87.38,87.38,0,0,1,40.47,137.12Zm10-50.64,5.51,18.6L40.71,116.77A87.33,87.33,0,0,1,50.43,86.48ZM109,152,97.54,118.65,128,97.71l30.46,20.94L147,152Zm91.07-46.92,5.51-18.6a87.33,87.33,0,0,1,9.72,30.29Zm-6.2-35.38-9.51,32.08-15.07,4.89L136,83.79V68.21l29.09-20A88.58,88.58,0,0,1,193.86,69.7ZM146.07,41.87,128,54.29,109.93,41.87a88.24,88.24,0,0,1,36.14,0ZM90.91,48.21l29.09,20V83.79L86.72,106.67l-15.07-4.89L62.14,69.7A88.58,88.58,0,0,1,90.91,48.21ZM63.15,187.42H83.52l7.17,20.27A88.4,88.4,0,0,1,63.15,187.42ZM110,214.13,98.12,180.71,107.35,168h41.3l9.23,12.71-11.83,33.42a88,88,0,0,1-36.1,0Zm55.36-6.44,7.17-20.27h20.37A88.4,88.4,0,0,1,165.31,207.69Z"/></symbol>
-    <symbol id="i-tiktok-logo" viewBox="0 0 256 256"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"/></symbol>
-    <symbol id="i-trophy" viewBox="0 0 256 256"><path d="M232,64H208V48a8,8,0,0,0-8-8H56a8,8,0,0,0-8,8V64H24A16,16,0,0,0,8,80V96a40,40,0,0,0,40,40h3.65A80.13,80.13,0,0,0,120,191.61V216H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V191.58c31.94-3.23,58.44-25.64,68.08-55.58H208a40,40,0,0,0,40-40V80A16,16,0,0,0,232,64ZM48,120A24,24,0,0,1,24,96V80H48v32q0,4,.39,8Zm144-8.9c0,35.52-29,64.64-64,64.9a64,64,0,0,1-64-64V56H192ZM232,96a24,24,0,0,1-24,24h-.5a81.81,81.81,0,0,0,.5-8.9V80h24Z"/></symbol>
-    <symbol id="i-gift" viewBox="0 0 256 256"><path d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"/></symbol>
-  </svg>
-
-  <!-- ── NAVIGATION ───────────────────────────────────────────── -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">Michael Donoser</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#book">Book</a></li>
-        <li><a href="#blog">Writing</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#career">Career</a></li>
-        <li><a href="#github">Projects</a></li>
-        <li><a href="#publications">Research</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a href="#newsletter" class="nav-cta">Subscribe</a>
-    </div>
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-brand" href="#top">Michael Donoser</a>
+    <ul class="nav-links">
+      <li><a href="#newsletter">Why</a></li>
+      <li><a href="#tracks">Two tracks</a></li>
+      <li><a href="#leadership">Coaching</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-gold" href="#newsletter">Subscribe</a>
   </nav>
+</div>
 
-  <!-- ── HERO ─────────────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="hero-eyebrow">Michael Donoser &middot; Author of The Leadership Fork</p>
-        <h1 class="hero-headline"><span class="nowrap">Same crisis.</span> <span class="nowrap">Same people.</span><br><span class="nowrap">One team unravels.</span> <span class="nowrap">One grows.</span><span class="hero-headline-accent">The difference? Habits you can learn.</span></h1>
-        <p class="hero-tagline">For twelve years I led cross-functional innovation teams at Amazon, most recently as <span class="nowrap">Director of Science</span>, shipping products used by millions of customers. Now I am turning what I learned into a book, <span class="nowrap">out in 2027</span>, and a newsletter that shares it as I go.</p>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-number">12</span><span class="stat-label">Years leading teams at Amazon</span></div>
-          <div class="stat"><span class="stat-number">25+</span><span class="stat-label">Products launched</span></div>
-          <div class="stat"><span class="stat-number">$B+</span><span class="stat-label">Customer impact</span></div>
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <img class="hero-face" src="img/profile.png" alt="Portrait of Michael Donoser">
+      <h1>Michael Donoser</h1>
+      <p class="hero-role">Author and leadership coach</p>
+      <p class="lead">My career ran on two tracks. In research, computer vision took me to a tenured position as Senior Researcher at Graz University of Technology. At Amazon, twelve years took me from founding a science team in Berlin to Director of Science. Today I focus on writing a book and coaching leaders, and my newsletter passes on what both tracks taught me about leading people.</p>
+      <a class="hero-book" href="#book">
+        <span class="sticker" aria-hidden="true"><small>Chapter 1</small><strong>Free</strong></span>
+        <img src="img/BookCover.jpg?v=3" alt="Cover of The Leadership Fork">
+        <div class="hero-book-text">
+          <p class="mono mono-gold">My book · The Leadership Fork · <span class="nowrap">out in 2027</span></p>
+          <p class="hero-hook"><span class="nowrap">Same crisis.</span> <span class="nowrap">Same people.</span><br> <span class="nowrap">One team unravels.</span> <span class="nowrap">One grows.</span></p>
+          <p class="hero-hook-accent">The difference? Habits you can learn.</p>
         </div>
-        <div class="hero-cta">
-          <a href="#newsletter" class="btn-hero btn-hero-primary" aria-describedby="hero-cta-note">Subscribe to the newsletter</a>
-          <p class="hero-cta-note" id="hero-cta-note">Free, every two weeks: one real team story and the habit behind it. Plus Chapter 1 in your welcome email.</p>
-        </div>
-        <a href="CV_Michael_Donoser.pdf" class="hero-cv-link" target="_blank">Download CV &rarr;</a>
+      </a>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#newsletter" aria-describedby="hero-note">Subscribe to the newsletter</a>
+        <p class="note" id="hero-note">Free, every two weeks: one real team story and the habit behind it. <strong>Plus Chapter 1 free in your welcome email.</strong></p>
       </div>
-      <div class="hero-photo">
-        <div class="hero-visual">
-        <div class="detection-frame">
-          <span class="corner corner-tl" aria-hidden="true"></span>
-          <span class="corner corner-tr" aria-hidden="true"></span>
-          <span class="corner corner-bl" aria-hidden="true"></span>
-          <span class="corner corner-br" aria-hidden="true"></span>
-          <div class="photo-ring">
-            <img src="img/profile.png" alt="Michael Donoser, Ph.D., author of The Leadership Fork, portrait"
-                 onerror="this.style.display='none';this.parentElement.classList.add('photo-initials')">
-            <div class="initials-fallback">MD</div>
-          </div>
-        </div>
-          <a href="#book" class="hero-cover" aria-label="The Leadership Fork: see the book">
-            <img src="img/BookCover.jpg?v=3" alt="Cover of The Leadership Fork">
-          </a>
-        </div>
-        <p class="hero-location"><svg class="ico" aria-hidden="true"><use href="#i-map-pin"/></svg> Berlin, Germany</p>
+      <div class="hero-links">
+        <a class="link-quiet" href="#tracks">See the two tracks &darr;</a>
+        <a class="link-quiet" href="CV_Michael_Donoser.pdf" target="_blank">Download CV &rarr;</a>
       </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll to explore</span>
-      <div class="scroll-arrow"></div>
     </div>
   </section>
 
-  <!-- ── NEWSLETTER ─────────────────────────────────────────── -->
-  <section id="newsletter">
+  <!-- NEWSLETTER -->
+  <section class="band" id="newsletter">
     <div class="container">
-      <h2 class="section-title">Why a Book, Why a Newsletter</h2>
-      <div class="nl-grid">
-        <div class="nl-story">
+      <div class="nl">
+        <div class="nl-story reveal">
+          <div class="section-head" style="margin-bottom:0">
+            <p class="mono">The story behind the book</p>
+            <h2>Why a book, why a newsletter</h2>
+          </div>
           <p>For more than a decade at Amazon, one question fascinated me: why do some teams consistently outperform others with the same talent, tools and resources? The answer was rarely skill or intent. It was a handful of small behaviors, repeated until they became the team&rsquo;s culture.</p>
           <p>That&rsquo;s the idea behind my book, <strong>The Leadership Fork</strong>, coming in 2027. It is built on stories rather than frameworks, because the lessons that matter most emerge in messy, human moments: a difficult conversation, a decision under pressure. Strip away the context, and you often strip away the lesson. Every story comes from a moment I witnessed, lived through, or caused at Amazon.</p>
           <p>In each chapter, two teams reach the same fork in the road. One slides into dysfunction, the other grows. From their choices I distill 55 practical mechanisms. One comes from the best advice of my career, and it came from my wife: add the word &ldquo;yet.&rdquo; <span class="nowrap">&ldquo;I can&rsquo;t do this&rdquo;</span> becomes <span class="nowrap">&ldquo;I can&rsquo;t do this yet.&rdquo;</span> Small things that change everything.</p>
           <p>Through my newsletter, I share these stories as I write them, along with practical lessons on leadership and teams.</p>
         </div>
-        <aside class="nl-signup" aria-labelledby="nl-signup-title">
-          <p class="newsletter-eyebrow">The Leadership Fork newsletter</p>
-          <h3 class="newsletter-title" id="nl-signup-title">One fork, every two weeks</h3>
-          <p class="newsletter-text">One leadership fork and the mechanism behind it, straight to your inbox every two weeks.</p>
-          <p class="nl-bonus"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg> Bonus: the full first chapter arrives in your welcome email.</p>
-          <div class="newsletter-embed">
+        <div class="nl-card reveal">
+          <p class="mono mono-gold">The Leadership Fork newsletter</p>
+          <h3>Join and get Chapter 1 free</h3>
+          <p class="gift">Bonus: the full first chapter arrives in your welcome email.</p>
+          <div class="nl-embed">
             <iframe src="https://theleadershipfork.substack.com/embed" title="Subscribe to The Leadership Fork on Substack" loading="lazy" scrolling="no"></iframe>
           </div>
-          <p class="newsletter-fine">Free. Unsubscribe with one click from any email. Form not loading? <a href="https://theleadershipfork.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack</a>.</p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── BOOK ─────────────────────────────────────────────────── -->
-  <section id="book" class="section-dark">
-    <div class="container">
-      <h2 class="section-title light" aria-label="The Leadership Fork: 55 Mechanisms for Leading When the Playbook Stops Working">The Leadership Fork<span class="book-title-sub">55 Mechanisms for Leading When the Playbook Stops Working</span></h2>
-      <p class="section-subtitle light">Coming in 2027. Five situations every leader faces, two teams in each, and 55 mechanisms you can start using on Monday.</p>
-      <div class="book-layout">
-        <div class="book-cover-wrap">
-          <span class="corner corner-tl" aria-hidden="true"></span>
-          <span class="corner corner-tr" aria-hidden="true"></span>
-          <span class="corner corner-bl" aria-hidden="true"></span>
-          <span class="corner corner-br" aria-hidden="true"></span>
-          <img src="img/BookCover.jpg?v=3" alt="The Leadership Fork: 55 Mechanisms for Leading When the Playbook Stops Working, by Michael Donoser (book cover)" class="book-cover-img" onerror="this.style.display='none'">
-        </div>
-        <div class="book-info">
-          <div class="book-badges">
-            <span class="book-badge book-badge--wip">Out in 2027</span>
-            <span class="book-badge book-badge--chapter">Chapter 1 free via the newsletter</span>
-          </div>
-          <ol class="book-chapters">
-            <li><span class="bc-title">The Launch Disaster</span><span class="bc-topic">A launch crisis: whether people feel safe enough to flag a risk before it becomes a crisis.</span></li>
-            <li><span class="bc-title">The Friction Point</span><span class="bc-topic">Cross-team conflict: how two people keep trust intact under pressure and disagreement.</span></li>
-            <li><span class="bc-title">The Olympus Bet</span><span class="bc-topic">A mid-year pivot: building the right thing, and changing course when the plan no longer fits.</span></li>
-            <li><span class="bc-title">The Choice Point</span><span class="bc-topic">High-stakes decisions: defining the real problem before the loudest voice decides.</span></li>
-            <li><span class="bc-title">The AI Frontier</span><span class="bc-topic">AI disruption: turning a mandate into real capability instead of gamed metrics.</span></li>
-          </ol>
-          <div class="book-links">
-            <a href="#newsletter" class="btn-hero btn-hero-primary">Subscribe to the newsletter</a>
-            <a href="https://theleadershipfork.com" class="book-site-link" target="_blank" rel="noopener">More at theleadershipfork.com &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── BLOG ────────────────────────────────────────────────── -->
-  <section id="blog">
-    <div class="container">
-      <h2 class="section-title">Writing</h2>
-      <p class="section-subtitle">Selected posts on leadership, learning, and the age of Generative AI. Published on <a href="https://www.linkedin.com/in/michael-donoser-17449458/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://medium.com/@michael.donoser" target="_blank" rel="noopener">Medium</a>.</p>
-      <div class="blog-grid">
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <div class="blog-tag">Leadership &amp; Identity</div>
-            <span class="blog-read-time">6 min read</span>
-          </div>
-          <h3>I am a Director of Science at Amazon. I've Been Winging It My Whole Life.</h3>
-          <p>A candid reflection on imposter syndrome, self-doubt, and the messiness behind a career that looks polished from the outside.</p>
-          <div class="blog-footer"><a href="https://medium.com/age-of-awareness/i-am-a-director-of-science-at-amazon-ive-been-winging-it-my-whole-life-dac6ebc17beb" target="_blank" rel="noopener">Read on Medium &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-meta">
-            <div class="blog-tag">Generative AI</div>
-            <span class="blog-read-time">11 min read</span>
-          </div>
-          <h3>From C64 to Claude: How AI Finally Let Me Build My Dream Game</h3>
-          <p>A childhood dream deferred by programming complexity, finally realised with AI. On creativity, persistence, and what it means to build something truly your own.</p>
-          <div class="blog-footer"><a href="https://ai.plainenglish.io/from-c64-to-claude-how-ai-finally-let-me-build-my-dream-game-b3bf6f542d8f" target="_blank" rel="noopener">Read on Medium &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Growth Mindset</div>
-          <h3>Fearing to Look Stupid Holds You Back</h3>
-          <p>AI creates the first truly judgment-free learning environment in human history. The only barrier to growth is giving yourself permission to ask.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_artificialintelligence-ailearning-growthmindset-activity-7414689371649703936-IjMn" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Resilience &amp; Ownership</div>
-          <h3>Take Action Instead of Pointing Fingers</h3>
-          <p>When projects derail, leaders reveal their true nature. Exceptional ones refuse the victim mindset and ask: what can I do right now?</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-growthmindset-professionalgrowth-activity-7416461205944340481-lVgX" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Communication &amp; Influence</div>
-          <h3>How To Communicate to AI</h3>
-          <p>The same principles that make us effective communicators with humans apply when prompting AI. Mastering one may sharpen the other.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_ai-communication-promptengineering-activity-7386353005870370817-4aBP" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Building Teams</div>
-          <h3>Kaizen Town Halls: Building a Culture of Continuous Improvement</h3>
-          <p>A regular forum where every team member has a voice. How Kaizen Town Halls build psychological safety and turn tensions into rapid, meaningful change.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_kaizen-psychologicalsafety-personaldevelopment-activity-7292530015244611584-ACCG" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Building Teams</div>
-          <h3>The Potemkin Organization</h3>
-          <p>When teams optimise for how they appear to leadership rather than real outcomes, the facade can look strong right up until it suddenly isn't.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-orgculture-leadershipprinciples-activity-7424069624037699586-2M7R" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Mental Models</div>
-          <h3>The Secret to Being Right A Lot</h3>
-          <p>Great decisions don't come from experience alone. They come from building a diverse toolkit of thinking frameworks that cut through noise and bias.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadershipprinciples-arerightalot-mentalmodels-activity-7269281844502704128-mxLc" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-tag">Generative AI</div>
-          <h3>From Idea to Working App in 30 Minutes</h3>
-          <p>When you can build your own tools in less than a lunch break, you move from passive observer to proactive creator. The only remaining obstacle is curiosity.</p>
-          <div class="blog-footer"><a href="https://www.linkedin.com/posts/michael-donoser-17449458_generativeai-rapidprototyping-innovationmindset-activity-7429855297357160449-LeG0" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a></div>
+          <p>Free. Unsubscribe with one click from any email. Form not loading? <a href="https://theleadershipfork.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack</a>.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── LEADERSHIP & COACHING ────────────────────────────────── -->
-  <section id="leadership" class="section-dark">
+  <!-- TWO TRACKS -->
+  <section id="tracks">
     <div class="container">
-      <h2 class="section-title light">Leadership &amp; Coaching</h2>
-      <p class="section-subtitle light">Helping people at any level grow into self-aware, resilient leaders. Six themes I coach and write about.</p>
-
-      <div class="leadership-intro">
-        <p>After more than a decade leading science teams at Amazon, I came to believe that the biggest leverage point in any organisation isn't the technology: it's the people. Coaching and mentoring was never a side activity for me; it was a core part of how I led. I invested deeply in building the inner toolkit of my teams: the resilience to own outcomes, the clarity to cut through noise, and the self-awareness to stay grounded when everything around them was moving fast. Today that is my full focus, through my book, my newsletter and coaching the next generation of leaders.</p>
-        <p>The rise of Generative AI has made this more urgent, not less. The pace of change is relentless, the stakes are high, and the old playbooks don't always apply. What endures is a strong inner foundation: a growth mindset, sound mental models, honest communication, and the courage to build teams where people can do their best work. These are skills that can be learned and trained, and I'm deeply committed to helping people build them.</p>
+      <div class="section-head reveal">
+        <p class="mono">Where the habits come from</p>
+        <h2>Two tracks, one question</h2>
+        <p>Most people who write about leading teams come from one side. My first track was research, from student to tenured senior researcher. My second was twelve years turning research into products at Amazon.</p>
       </div>
 
-      <div class="leadership-pillars">
+      <div class="tracks">
+        <div class="track track-research">
+          <div class="track-label"><span class="dot" aria-hidden="true"></span><span class="mono">Track 01 · Research</span></div>
+          <article class="t-card reveal">
+            <span class="when">1996 – 2007 · Graz University of Technology</span>
+            <h3>M.Sc. and Ph.D. in computer vision</h3>
+            <p>Both with highest distinction. Thesis on object segmentation and tracking.</p>
+          </article>
+          <article class="t-card reveal">
+            <span class="when">2008 – 2014 · Graz University of Technology</span>
+            <h3>Assistant Professor, then tenured Senior Researcher</h3>
+            <p>Led the Virtual Habitat research group and supervised eight PhD students.</p>
+          </article>
+          <article class="t-card reveal">
+            <span class="when">2008 – 2012 · Recognition</span>
+            <h3>Four best paper awards</h3>
+            <p>At ICPR, ACCV and twice at OAGM, plus the Josef Krainer Prize of the State of Styria for early-career scientific achievement.</p>
+            <p class="t-links"><a href="https://iapr.org/archives/icpr2008/photos3/Best%20Paper%20Awards/images/2008_iapr_tampa_031.jpg" target="_blank" rel="noopener">ICPR 2008 award ceremony photo</a><a href="https://www.steirisches-gedenkwerk.at/josef-krainer-preise-2008/" target="_blank" rel="noopener">Josef Krainer Prize article (German)</a></p>
+          </article>
+          <article class="t-card reveal">
+            <span class="when">Research record</span>
+            <div class="t-stats">
+              <div><strong>50+</strong><span>peer reviewed papers</span></div>
+              <div><strong>26</strong><span>at the big five venues</span></div>
+              <div><strong>3,310</strong><span>citations</span></div>
+            </div>
+            <ul class="venues" aria-label="Papers per venue">
+              <li>CVPR <b>9</b></li>
+              <li>ICCV <b>3</b></li>
+              <li>ECCV <b>2</b></li>
+              <li>BMVC <b>8</b></li>
+              <li class="award">ACCV <b>4</b></li>
+              <li class="award">ICPR <b>12</b></li>
+              <li class="award">OAGM <b>2</b></li>
+            </ul>
+            <p class="venues-note">&#9733; Best paper award at that venue. Full record on <a href="https://scholar.google.com/citations?user=zuYS1cQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+          </article>
+        </div>
 
-        <div class="pillar-card">
+        <div class="spine" aria-hidden="true"></div>
+
+        <div class="track track-industry">
+          <div class="track-label"><span class="dot" aria-hidden="true"></span><span class="mono">Track 02 · Industry</span></div>
+          <article class="t-card reveal">
+            <span class="when">2014 – 2018 · Amazon, Berlin</span>
+            <h3>Applied Scientist Manager</h3>
+            <p>Founded and built the computer vision science team in Berlin, from the first hire to its culture.</p>
+          </article>
+          <article class="t-card reveal">
+            <span class="when">2018 – 2023 · Amazon, Berlin</span>
+            <h3>Senior Applied Scientist Manager</h3>
+            <p>Grew the team and its research to production pipelines across multiple Amazon product lines.</p>
+          </article>
+          <article class="t-card highlight reveal">
+            <span class="when">2023 – 2026 · Amazon, Germany</span>
+            <h3>Director of Science</h3>
+            <p>Led a cross-functional computer vision and AI organisation across several German sites.</p>
+          </article>
+          <article class="t-card reveal">
+            <span class="when">Industry record</span>
+            <div class="t-stats">
+              <div><strong>25+</strong><span>production launches</span></div>
+              <div><strong>$B+</strong><span>customer impact</span></div>
+            </div>
+            <p class="mono launches-label">Key production launches</p>
+            <ul class="venues launches" aria-label="Key production launches">
+              <li>Image &amp; video generation and moderation</li>
+              <li>Visual recommendations</li>
+              <li>Image translation</li>
+              <li>Shoppable images</li>
+              <li>Virtual try-on</li>
+              <li>Video copyright infringement detection</li>
+              <li>Video maturity recognition</li>
+              <li>Accessibility on Echo screen devices</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="merge reveal" id="merge">
+        <svg viewBox="0 0 560 96" aria-hidden="true">
+          <path class="path path-research" d="M 20 0 C 20 60, 280 40, 280 88"/>
+          <path class="path path-industry" d="M 540 0 C 540 60, 280 40, 280 88"/>
+          <circle class="meet" cx="280" cy="88" r="8"/>
+        </svg>
+        <p class="mono mono-gold">2026 · Both tracks meet</p>
+        <h3>The biggest leverage point in any organisation <span class="dim">isn&rsquo;t the technology. It&rsquo;s the people.</span></h3>
+        <p>That is what both tracks taught me, and what the book is about.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="band" id="leadership">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="mono">Leadership &amp; coaching</p>
+        <h2>Six themes I coach and write about</h2>
+        <p>Coaching was never a side job for me. It was how I led. Everything below can be learned and trained, and helping leaders build it is now my full focus.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal">
           <div class="pillar-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10"/><path d="M12 10c0-4 3-6 7-6 0 4-3 7-7 6z"/><path d="M12 14c0-3-2.5-5-6-5 0 3 2.5 5.5 6 5z"/></svg></div>
           <h3>Growth Mindset &amp; Continuous Learning</h3>
-          <p>Intelligence and skills are built, not fixed. I help people embrace discomfort as a signal of growth: to ask the questions they've been afraid to ask, treat failure as data, and stay relentlessly curious in a world where the half-life of knowledge is shrinking fast.</p>
+          <p>Skills are built, not fixed. I help people read discomfort as a sign that they are growing: ask the question they have been avoiding, treat a failure as data, and keep learning while what they know goes out of date faster every year.</p>
           <div class="pillar-links">
-            <div class="pillar-links-label">Related writing</div>
+            <p class="mono">Related writing</p>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_artificialintelligence-ailearning-growthmindset-activity-7414689371649703936-IjMn" target="_blank" rel="noopener">Fearing to Look Stupid Holds You Back</a>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_growthmindset-embracemistakes-amazonscience-activity-7259158294923997184-ZUQR" target="_blank" rel="noopener">Sometimes We Win, Sometimes We Learn</a>
           </div>
-        </div>
-
-        <div class="pillar-card">
+        </article>
+        <article class="pillar reveal">
           <div class="pillar-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div>
           <h3>Resilience, Ownership &amp; Accountability</h3>
-          <p>Exceptional leaders refuse the victim mindset. When projects derail, they ask &ldquo;What can I do right now?&rdquo; rather than crafting explanations. I coach on reclaiming agency: owning outcomes, not just credit, and choosing usefulness over comfort when it matters most.</p>
+          <p>When a project derails, strong leaders don&rsquo;t start with explanations. They ask: &ldquo;What can I do right now?&rdquo; I coach people to take back that agency: owning outcomes, not just credit, and choosing to be useful over being comfortable when it counts.</p>
           <div class="pillar-links">
-            <div class="pillar-links-label">Related writing</div>
+            <p class="mono">Related writing</p>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-growthmindset-professionalgrowth-activity-7416461205944340481-lVgX" target="_blank" rel="noopener">Take Action Instead of Pointing Fingers</a>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_victimlanguage-proactiveattitude-personalgrowth-activity-7284578603562856448-xNVB" target="_blank" rel="noopener">Victim Mentality vs. Proactive Attitude</a>
           </div>
-        </div>
-
-        <div class="pillar-card">
+        </article>
+        <article class="pillar reveal">
           <div class="pillar-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="11" rx="2"/><path d="M8 16v4l4.5-4"/></svg></div>
           <h3>Feedback, Communication &amp; Influence</h3>
-          <p>Honest, direct communication is a force multiplier. I work with leaders on giving and receiving feedback without flinching, managing up effectively, and influencing without formal authority: the skills that determine whether great ideas actually get implemented.</p>
+          <p>Whether a good idea ever ships often comes down to communication. I work with leaders on giving and receiving honest feedback without flinching, managing up, and influencing people who don&rsquo;t report to them.</p>
           <div class="pillar-links">
-            <div class="pillar-links-label">Related writing</div>
+            <p class="mono">Related writing</p>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_ai-communication-promptengineering-activity-7386353005870370817-4aBP" target="_blank" rel="noopener">How To Communicate to AI</a>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_personaldevelopment-seekingfeedback-amazonscience-activity-7266852915703676928-cvb4" target="_blank" rel="noopener">The Art of Seeking Feedback</a>
           </div>
-        </div>
-
-        <div class="pillar-card">
+        </article>
+        <article class="pillar reveal">
           <div class="pillar-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></div>
           <h3>Building High-Performance Teams</h3>
-          <p>Great teams are built on psychological safety, not just talent. I help leaders spot and dismantle the subtle dysfunctions, like teams that optimise for appearances over outcomes, and create environments where top performers do the best work of their lives.</p>
+          <p>Talent alone doesn&rsquo;t make a great team; people also need to feel safe speaking up. I help leaders spot quiet dysfunctions, like a team that polishes appearances instead of delivering outcomes, and build teams where strong people do their best work.</p>
           <div class="pillar-links">
-            <div class="pillar-links-label">Related writing</div>
+            <p class="mono">Related writing</p>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadership-orgculture-leadershipprinciples-activity-7424069624037699586-2M7R" target="_blank" rel="noopener">The Potemkin Organization</a>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_psychologicalsafety-workplaceculture-teamdynamics-activity-7287073571141500929-dkGF" target="_blank" rel="noopener">Psychological Safety at Work</a>
           </div>
-        </div>
-
-        <div class="pillar-card">
+        </article>
+        <article class="pillar reveal">
           <div class="pillar-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="12" height="12" rx="1"/><rect x="8" y="8" width="12" height="12" rx="1"/></svg></div>
           <h3>Mental Models &amp; Strategic Clarity</h3>
-          <p>Good decisions come from good thinking frameworks. I help leaders build a toolkit of mental models: first-principles reasoning, inversion, systems thinking, so they can cut through noise, know when to persist and when to stop, and reason from fundamentals rather than analogy.</p>
+          <p>Good decisions come from good thinking tools. I help leaders build a small set of mental models, such as first-principles reasoning, inversion and systems thinking, so they can cut through noise and know when to push on and when to stop.</p>
           <div class="pillar-links">
-            <div class="pillar-links-label">Related writing</div>
+            <p class="mono">Related writing</p>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_leadershipprinciples-arerightalot-mentalmodels-activity-7269281844502704128-mxLc" target="_blank" rel="noopener">The Secret to Being Right A Lot</a>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_sayingno-generativeai-decisionmaking-activity-7309882413743026176-8l6N" target="_blank" rel="noopener">The Power of Saying No</a>
           </div>
-        </div>
-
-        <div class="pillar-card">
+        </article>
+        <article class="pillar reveal">
           <div class="pillar-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <h3>Leading in the Age of Generative AI</h3>
-          <p>The old playbooks don't fully apply anymore. I share a hands-on perspective on how AI is reshaping leadership: from using it as a judgment-free thought partner and learning environment, to prototyping ideas in minutes, to re-thinking what it means to create impact in AI-native organisations.</p>
+          <p>AI is changing what leaders do, and the old playbooks only go so far. I share what I have tried myself: using AI as a judgment-free thinking partner and tutor, prototyping an idea in minutes, and rethinking what impact means when AI does more of the work.</p>
           <div class="pillar-links">
-            <div class="pillar-links-label">Related writing</div>
+            <p class="mono">Related writing</p>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_generativeai-rapidprototyping-innovationmindset-activity-7429855297357160449-LeG0" target="_blank" rel="noopener">From Idea to Working App in 30 Minutes</a>
             <a href="https://www.linkedin.com/posts/michael-donoser-17449458_generativeai-aiproductivity-personaldevelopment-activity-7366089220383219712-V5xd" target="_blank" rel="noopener">How AI Is Changing My Day-to-Day Work</a>
           </div>
-        </div>
-
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ── CAREER TIMELINE ──────────────────────────────────────── -->
-  <section id="career">
+  <!-- BOOK -->
+  <section id="book">
     <div class="container">
-      <h2 class="section-title">Career</h2>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="tl-dot current"></div>
-          <div class="tl-body">
-            <div class="tl-meta">
-              <span class="tl-year">2023 &ndash; 2026</span>
-              <span class="tl-tag industry">Industry</span>
-            </div>
-            <h3>Director of Science</h3>
-            <p class="tl-org">Amazon Development Center Germany &middot; Berlin, Germany</p>
-            <p>Leading a cross-functional Computer Vision &amp; AI innovation organization across multiple German sites. Defining long-term CV &amp; AI strategy with direct reporting to Retail VP. Key production launches include image &amp; video generation, visual recommendations, image translation, shoppable images, image &amp; video moderation, virtual try-on applications, visual copyright infringement detection, video maturity recognition, and accessibility features on Echo Screen Devices.</p>
+      <div class="book">
+        <img class="book-cover reveal" src="img/BookCover.jpg?v=3" alt="Cover of The Leadership Fork: 55 Mechanisms for Leading When the Playbook Stops Working">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:2rem">
+            <p class="mono">The book · out in 2027</p>
+            <h2>The Leadership Fork</h2>
+            <p>Five situations every leader faces. 55 mechanisms for when the playbook stops working.</p>
+          </div>
+          <ol class="chapters">
+            <li><span class="num">01</span><div class="ch-body">
+              <p class="ch-head"><strong>The Launch Disaster</strong><span class="mono">Psychological safety</span></p>
+              <p class="ch-story">Six months of work go live, and the launch corrupts the order records millions of customers rely on. Rolling back does not undo the damage, and nobody knows why.</p>
+            </div></li>
+            <li><span class="num">02</span><div class="ch-body">
+              <p class="ch-head"><strong>The Friction Point</strong><span class="mono">Collaboration</span></p>
+              <p class="ch-story">Weeks before a hard December deadline, a specification change wipes out six weeks of an engineer&rsquo;s work and forces him into a tense collaboration with the designer behind it.</p>
+            </div></li>
+            <li><span class="num">03</span><div class="ch-body">
+              <p class="ch-head"><strong>The Olympus Bet</strong><span class="mono">Execution</span></p>
+              <p class="ch-story">Months into a flagship project with a fixed November deadline, new data shows that the team&rsquo;s whole technical approach has become the wrong one.</p>
+            </div></li>
+            <li><span class="num">04</span><div class="ch-body">
+              <p class="ch-head"><strong>The Choice Point</strong><span class="mono">Decision making</span></p>
+              <p class="ch-story">Around eighty proposals compete for a year of investment. In the first minute of planning, a visiting director declares what the real problem is, and the room has to decide whether to believe it.</p>
+            </div></li>
+            <li><span class="num">05</span><div class="ch-body">
+              <p class="ch-head"><strong>The AI Frontier</strong><span class="mono">Leading through change</span></p>
+              <p class="ch-story">A company-wide mandate to bring AI into every team lands on both teams the same day, with the same pressure and the same tools.</p>
+            </div></li>
+          </ol>
+          <div class="book-actions">
+            <a class="btn btn-gold" href="#newsletter">Get Chapter 1 with the newsletter</a>
+            <a class="link-quiet" href="https://theleadershipfork.com" target="_blank" rel="noopener">More at theleadershipfork.com &rarr;</a>
           </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <div class="tl-meta">
-              <span class="tl-year">2018 &ndash; 2023</span>
-              <span class="tl-tag industry">Industry</span>
-            </div>
-            <h3>Senior Applied Scientist Manager</h3>
-            <p class="tl-org">Amazon Development Center Germany &middot; Berlin, Germany</p>
-            <p>Grew and led the Applied Science team, fostering research-to-production pipelines for computer vision applications across multiple Amazon product lines.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <div class="tl-meta">
-              <span class="tl-year">2014 &ndash; 2018</span>
-              <span class="tl-tag industry">Industry</span>
-            </div>
-            <h3>Applied Scientist Manager</h3>
-            <p class="tl-org">Amazon Development Center Germany &middot; Berlin, Germany</p>
-            <p>Founded and built the computer vision science team in Berlin, Germany, establishing the infrastructure and culture for research-driven product innovation at Amazon Berlin.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <div class="tl-meta">
-              <span class="tl-year">2013 &ndash; 2014</span>
-              <span class="tl-tag academia">Academia</span>
-            </div>
-            <h3>Senior Researcher (Tenure Track)</h3>
-            <p class="tl-org">Institute for Computer Graphics and Vision &middot; Graz University of Technology, Austria</p>
-            <p>Research on image segmentation, shape matching, and retrieval. Supervision of PhD students and international research collaborations.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <div class="tl-meta">
-              <span class="tl-year">2008 &ndash; 2012</span>
-              <span class="tl-tag academia">Academia</span>
-            </div>
-            <h3>Assistant Professor &middot; Leader, Virtual Habitat Group</h3>
-            <p class="tl-org">Institute for Computer Graphics and Vision &middot; Graz University of Technology, Austria</p>
-            <p>Led the Virtual Habitat research group. Supervised eight PhD students.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <div class="tl-meta">
-              <span class="tl-year">2003 &ndash; 2008</span>
-              <span class="tl-tag academia">Academia</span>
-            </div>
-            <h3>Research Associate &middot; PostDoc &middot; Ph.D. Candidate </h3>
-            <p class="tl-org">Institute for Computer Graphics and Vision &middot; Graz University of Technology, Austria</p>
-            <p>Thesis:<em>"Advanced Segmentation and Tracking Algorithms and Their Application to 3D Paper Structure Analysis". Graduated with highest distinction.</em></p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <div class="tl-meta">
-              <span class="tl-year">1996 &ndash; 2003</span>
-              <span class="tl-tag academia">Academia</span>
-            </div>
-            <h3>M.Sc. in Telematik (Information and Computer Engineering)</h3>
-            <p class="tl-org">Institute for Computer Graphics and Vision &middot; Graz University of Technology, Austria</p>
-            <p>Thesis: <em>"Object Segmentation in Videos". Graduated with highest distinction.</em></p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── AWARDS ──────────────────────────────────────────────── -->
-  <section id="awards" class="section-dark">
+  <!-- WRITING -->
+  <section class="band" id="writing">
     <div class="container">
-      <h2 class="section-title light">Recognition &amp; Awards</h2>
-      <div class="awards-grid">
-        <div class="award-card">
-          <div class="award-year">2008</div>
-          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
-          <h3>Josef-Krainer F&ouml;rderungspreis</h3>
-          <p>Awarded by the State Government of Styria (Austria) for outstanding early-career scientific achievement.</p>
-          <a href="https://www.steirisches-gedenkwerk.at/josef-krainer-preise-2008/" target="_blank" rel="noopener" class="award-photo-link">Link to Article (German) &rarr;</a>
-        </div>
-        <div class="award-card">
-          <div class="award-year">2008</div>
-          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
-          <h3>Best Scientific Paper Award</h3>
-          <p>International Conference on Pattern Recognition (ICPR), <em>"Using Web Search Engines to Improve Text Recognition"</em></p>
-          <a href="https://iapr.org/archives/icpr2008/photos3/Best%20Paper%20Awards/images/2008_iapr_tampa_031.jpg" target="_blank" rel="noopener" class="award-photo-link">View award photo &rarr;</a>
-        </div>
-        <div class="award-card">
-          <div class="award-year">2009</div>
-          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
-          <h3>Best Scientific Paper Award</h3>
-          <p>OAGM/AAPR Workshop, <em>"Finding Stable Extremal Region Boundaries"</em></p>
-        </div>
-        <div class="award-card">
-          <div class="award-year">2010</div>
-          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
-          <h3>Best Scientific Paper Award</h3>
-          <p>OAGM/AAPR Workshop, <em>"MSER Templates for 3D Pose Tracking"</em></p>
-        </div>
-        <div class="award-card">
-          <div class="award-year">2012</div>
-          <div class="award-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div>
-          <h3>Best Scientific Paper Award</h3>
-          <p>Asian Conference on Computer Vision (ACCV): <em>"Detecting Partially Occluded Objects with an Implicit Shape Model Random Field"</em></p>
-        </div>
+      <div class="section-head reveal">
+        <p class="mono">Writing</p>
+        <h2>Recent essays</h2>
+        <p>Longer pieces on leadership, learning and AI, on Medium and LinkedIn.</p>
       </div>
-
-    </div>
-  </section>
-
-  <!-- ── GITHUB / PROJECTS ────────────────────────────────────── -->
-  <section id="github">
-    <div class="container">
-      <h2 class="section-title">Personal Projects</h2>
-      <p class="section-subtitle">Side projects &amp; experiments on GitHub</p>
-      <div class="github-profile-cta">
-        <a href="https://github.com/mike-dono-0815" class="gh-profile-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View all repositories on GitHub &rarr;
+      <div class="posts">
+        <a class="post reveal" href="https://medium.com/age-of-awareness/i-am-a-director-of-science-at-amazon-ive-been-winging-it-my-whole-life-dac6ebc17beb" target="_blank" rel="noopener">
+          <span class="mono">Leadership &amp; identity</span>
+          <h3>I am a Director of Science at Amazon. I&rsquo;ve Been Winging It My Whole Life.</h3>
+          <p>Imposter syndrome, self-doubt, and the messy reality behind a career that looks polished from the outside.</p>
+          <span class="more">Read on Medium &rarr;</span>
+        </a>
+        <a class="post reveal" href="https://www.linkedin.com/posts/michael-donoser-17449458_artificialintelligence-ailearning-growthmindset-activity-7414689371649703936-IjMn" target="_blank" rel="noopener">
+          <span class="mono">Growth mindset</span>
+          <h3>Fearing to Look Stupid Holds You Back</h3>
+          <p>With AI, you can ask any question without anyone judging you. What still holds most of us back is giving ourselves permission to ask.</p>
+          <span class="more">Read on LinkedIn &rarr;</span>
+        </a>
+        <a class="post reveal" href="https://ai.plainenglish.io/from-c64-to-claude-how-ai-finally-let-me-build-my-dream-game-b3bf6f542d8f" target="_blank" rel="noopener">
+          <span class="mono">Generative AI</span>
+          <h3>From C64 to Claude: How AI Finally Let Me Build My Dream Game</h3>
+          <p>As a kid on the C64, I wanted to build my own game, but programming it was too complex and took too much time. Decades later, AI made it happen.</p>
+          <span class="more">Read on Medium &rarr;</span>
         </a>
       </div>
-      <div class="repo-grid">
-        <a href="https://cv-conf-app.vercel.app/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/ConferenceSimulator.jpg" alt="cv-conf-app preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg></span>
-              <span class="repo-lang">TypeScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-head reveal">
+        <div class="section-head">
+          <p class="mono">Projects</p>
+          <h2>What I build with AI</h2>
+          <p>Side projects I build with AI, mostly games and learning tools. Every one is live, so you can try it.</p>
+        </div>
+        <a class="link-quiet" href="https://github.com/mike-dono-0815" target="_blank" rel="noopener">All repositories on GitHub &rarr;</a>
+      </div>
+      <div class="projects">
+        <a class="project reveal" href="https://cv-conf-app.vercel.app/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/ConferenceSimulator.jpg" alt="cv-conf-app preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">TypeScript</span><span class="mono demo">Live demo &rarr;</span></div>
             <h3>cv-conf-app</h3>
-            <p>Conference Simulator: step inside an interactive 3D CVPR venue, explore poster sessions, watch oral talks, and visit the industry fair.</p>
+            <p>A 3D conference simulator: walk through a CVPR venue, browse the poster sessions, sit in on oral talks and visit the industry fair.</p>
           </div>
         </a>
-        <a href="https://world-cup-app-eta.vercel.app/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/SoccerBet.png" alt="world-cup-betting preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-dice-five"/></svg></span>
-              <span class="repo-lang">TypeScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
+        <a class="project reveal" href="https://world-cup-app-eta.vercel.app/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/SoccerBet.png" alt="world-cup-betting preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">TypeScript</span><span class="mono demo">Live demo &rarr;</span></div>
             <h3>world-cup-betting</h3>
-            <p>FIFA World Cup 2026 betting game: predict match results, compete on a leaderboard, and track your picks across the full tournament.</p>
+            <p>A prediction game for the 2026 FIFA World Cup: tip every match, track your picks through the tournament and climb the leaderboard.</p>
           </div>
         </a>
-        <a href="https://mike-dono-0815.github.io/adventure-game/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/Adventure.jpg" alt="adventure-game preview" onerror="this.style.display='none'">
+        <article class="project project-multi reveal">
+          <div class="project-thumb"><img src="img/Adventure.jpg" alt="adventure-game preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">JavaScript</span><span class="mono demo">Live demo &rarr;</span></div>
+            <h3><a class="stretch" href="https://mike-dono-0815.github.io/adventure-game/" target="_blank" rel="noopener">adventure-game</a></h3>
+            <p>A point-and-click comedy adventure. HR has lost your separation agreement, and you have to find it and get out of the office without being fired.</p>
+            <a class="project-story" href="https://ai.plainenglish.io/from-c64-to-claude-how-ai-finally-let-me-build-my-dream-game-b3bf6f542d8f" target="_blank" rel="noopener">Read the story behind it &rarr;</a>
           </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-game-controller"/></svg></span>
-              <span class="repo-lang">Python</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
-            <h3>adventure-game</h3>
-            <p>A text-based adventure game exploring interactive storytelling with AI-generated narratives.</p>
-          </div>
-        </a>
-        <a href="https://mike-dono-0815.github.io/world-cup-simulation/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/WorldCup.png" alt="world-cup-simulation preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>
-              <span class="repo-lang">TypeScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
+        </article>
+        <a class="project reveal" href="https://mike-dono-0815.github.io/world-cup-simulation/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/WorldCup.png" alt="world-cup-simulation preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">TypeScript</span><span class="mono demo">Live demo &rarr;</span></div>
             <h3>world-cup-simulation</h3>
-            <p>Interactive FIFA World Cup 2026 tournament simulator. Enter match results through group stage and knockout rounds to crown a champion.</p>
+            <p>Play through the 2026 World Cup yourself: enter results from the group stage to the final and see who lifts the trophy.</p>
           </div>
         </a>
-        <a href="https://mike-dono-0815.github.io/learn-japanese/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/Japan.png" alt="learn-japanese preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
+        <a class="project reveal" href="https://mike-dono-0815.github.io/learn-japanese/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/Japan.png" alt="learn-japanese preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">JavaScript</span><span class="mono demo">Live demo &rarr;</span></div>
             <h3>learn-japanese</h3>
-            <p>An exercise tool for learning Japanese.</p>
+            <p>Japanese vocabulary practice with audio, built for German speakers.</p>
           </div>
         </a>
-        <a href="https://mike-dono-0815.github.io/soccer-story-game/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/SoccerGame.png" alt="soccer story game preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-soccer-ball"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
+        <a class="project reveal" href="https://mike-dono-0815.github.io/soccer-story-game/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/SoccerGame.png" alt="soccer story game preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">JavaScript</span><span class="mono demo">Live demo &rarr;</span></div>
             <h3>soccer-story-game</h3>
-            <p>An interactive soccer story game with branching narratives and match simulation.</p>
+            <p>A story-driven soccer management game: one season as manager of FC Valhalla, with choices that branch into different endings.</p>
           </div>
         </a>
-        <a href="https://mike-dono-0815.github.io/easter-treasure-hunt/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/EasterApp.png" alt="easter-treasure-hunt preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-cat"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
+        <a class="project reveal" href="https://mike-dono-0815.github.io/easter-treasure-hunt/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/EasterApp.png" alt="easter-treasure-hunt preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">JavaScript</span><span class="mono demo">Live demo &rarr;</span></div>
             <h3>easter-treasure-hunt</h3>
-            <p>An Easter-themed treasure hunt game with snakes and interactive challenges.</p>
+            <p>An Easter treasure hunt for kids, in German: puzzles, songs and clues that lead to the Easter nest.</p>
           </div>
         </a>
-        <a href="https://mike-dono-0815.github.io/guitar-scale-trainer/" class="repo-card" target="_blank" rel="noopener">
-          <div class="repo-thumb">
-            <img src="img/GuitarScales.png" alt="guitar-scale-trainer preview" onerror="this.style.display='none'">
-          </div>
-          <div class="repo-body">
-            <div class="repo-header">
-              <span class="repo-icon"><svg class="ico" aria-hidden="true"><use href="#i-guitar"/></svg></span>
-              <span class="repo-lang">JavaScript</span>
-              <span class="repo-link-badge demo">Live Demo</span>
-            </div>
+        <a class="project reveal" href="https://mike-dono-0815.github.io/guitar-scale-trainer/" target="_blank" rel="noopener">
+          <div class="project-thumb"><img src="img/GuitarScales.png" alt="guitar-scale-trainer preview" loading="lazy"></div>
+          <div class="project-body">
+            <div class="project-meta"><span class="mono">JavaScript</span><span class="mono demo">Live demo &rarr;</span></div>
             <h3>guitar-scale-trainer</h3>
-            <p>Interactive fretboard trainer for learning guitar scales and modes.</p>
+            <p>An interactive fretboard for learning guitar scales and modes.</p>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ── PUBLICATIONS ──────────────────────────────────────────── -->
-  <section id="publications" class="section-dark">
+  <!-- CONTACT -->
+  <section class="band" id="contact">
     <div class="container">
-      <h2 class="section-title light">Research Background</h2>
-      <p class="section-subtitle light">
-        Over 50 peer-reviewed papers in computer vision and machine learning.
-        Full record on <a href="https://scholar.google.com/citations?user=zuYS1cQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
-      </p>
-
-      <!-- Scholar Stats Panel -->
-      <div class="scholar-panel">
-        <div class="scholar-eyebrow">Google Scholar Impact</div>
-        <div class="scholar-metrics">
-          <div class="scholar-metric">
-            <span class="sm-num">3,221</span>
-            <span class="sm-name">Citations</span>
-            <span class="sm-since">891 since 2021</span>
-          </div>
-          <div class="scholar-sep"></div>
-          <div class="scholar-metric">
-            <span class="sm-num">27</span>
-            <span class="sm-name">h-index</span>
-            <span class="sm-since">13 since 2021</span>
-          </div>
-          <div class="scholar-sep"></div>
-          <div class="scholar-metric">
-            <span class="sm-num">49</span>
-            <span class="sm-name" title="Number of publications with at least 10 citations each">i10-index</span>
-            <span class="sm-since">19 since 2021</span>
-          </div>
-        </div>
-        <a href="https://scholar.google.com/citations?user=zuYS1cQAAAAJ&hl=en" class="scholar-cta" target="_blank" rel="noopener">View full profile on Google Scholar →</a>
+      <div class="section-head reveal">
+        <p class="mono">Contact</p>
+        <h2>Where I write and stay in touch</h2>
       </div>
-
-      <!-- Venue strip -->
-      <div class="venue-strip">
-        <p class="venue-strip-label">26 papers at the “Big Five” computer vision conferences, plus ICPR and OAGM</p>
-        <ul class="venue-list">
-          <li class="venue">
-            <span class="venue-name">CVPR</span>
-            <span class="venue-count">9</span>
-          </li>
-          <li class="venue">
-            <span class="venue-name">ICCV</span>
-            <span class="venue-count">3</span>
-          </li>
-          <li class="venue">
-            <span class="venue-name">ECCV</span>
-            <span class="venue-count">2</span>
-          </li>
-          <li class="venue">
-            <span class="venue-name">BMVC</span>
-            <span class="venue-count">8</span>
-          </li>
-          <li class="venue venue-awarded">
-            <span class="venue-name">ACCV</span>
-            <span class="venue-count">4</span>
-            <svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg><span class="sr-only">Best Paper Award</span>
-          </li>
-          <li class="venue-sep" aria-hidden="true"></li>
-          <li class="venue venue-awarded">
-            <span class="venue-name">ICPR</span>
-            <span class="venue-count">12</span>
-            <svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg><span class="sr-only">Best Paper Award</span>
-          </li>
-          <li class="venue venue-awarded">
-            <span class="venue-name">OAGM</span>
-            <span class="venue-count">2</span>
-            <svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg><span class="sr-only">Best Paper Award</span>
-          </li>
-        </ul>
-        <p class="venue-legend"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg> Best Paper Award at ACCV 2012, ICPR 2008 and OAGM 2009 &amp; 2010</p>
+      <div class="socials reveal">
+        <a class="social" href="https://www.linkedin.com/in/michael-donoser-17449458/" target="_blank" rel="noopener">
+          <span class="social-icon"><svg aria-hidden="true"><use href="#i-linkedin-logo"/></svg></span>
+          <span class="social-name">LinkedIn</span>
+          <span class="social-handle">michael-donoser</span>
+        </a>
+        <a class="social" href="https://substack.com/@michaeldonoser" target="_blank" rel="noopener">
+          <span class="social-icon"><svg aria-hidden="true"><use href="#i-newspaper-clipping"/></svg></span>
+          <span class="social-name">Substack</span>
+          <span class="social-handle">@michaeldonoser</span>
+        </a>
+        <a class="social" href="https://www.instagram.com/michaeldonoser/" target="_blank" rel="noopener">
+          <span class="social-icon"><svg aria-hidden="true"><use href="#i-instagram-logo"/></svg></span>
+          <span class="social-name">Instagram</span>
+          <span class="social-handle">@michaeldonoser</span>
+        </a>
+        <a class="social" href="https://www.tiktok.com/@michaeldonoser" target="_blank" rel="noopener">
+          <span class="social-icon"><svg aria-hidden="true"><use href="#i-tiktok-logo"/></svg></span>
+          <span class="social-name">TikTok</span>
+          <span class="social-handle">@michaeldonoser</span>
+        </a>
+        <a class="social" href="https://medium.com/@michael.donoser" target="_blank" rel="noopener">
+          <span class="social-icon"><svg aria-hidden="true"><use href="#i-medium-logo"/></svg></span>
+          <span class="social-name">Medium</span>
+          <span class="social-handle">@michael.donoser</span>
+        </a>
+        <a class="social" href="https://github.com/mike-dono-0815" target="_blank" rel="noopener">
+          <span class="social-icon"><svg aria-hidden="true"><use href="#i-github-logo"/></svg></span>
+          <span class="social-name">GitHub</span>
+          <span class="social-handle">mike-dono-0815</span>
+        </a>
+        <a class="social" href="https://scholar.google.com/citations?user=zuYS1cQAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <span class="social-icon"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span>
+          <span class="social-name">Google Scholar</span>
+          <span class="social-handle">Research record</span>
+        </a>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- ── CONTACT ──────────────────────────────────────────────── -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Find Me Online</h2>
-      <p class="section-subtitle">Where I write, share and stay in touch.</p>
-      <div class="contact-grid">
-        <a href="https://www.linkedin.com/in/michael-donoser-17449458/" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-linkedin-logo"/></svg></div>
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-val">michael-donoser</span>
-        </a>
-        <a href="https://substack.com/@michaeldonoser" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-newspaper-clipping"/></svg></div>
-          <span class="contact-label">Substack</span>
-          <span class="contact-val">@michaeldonoser</span>
-        </a>
-        <a href="https://www.instagram.com/michaeldonoser/" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-instagram-logo"/></svg></div>
-          <span class="contact-label">Instagram</span>
-          <span class="contact-val">@michaeldonoser</span>
-        </a>
-        <a href="https://www.tiktok.com/@michaeldonoser" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-tiktok-logo"/></svg></div>
-          <span class="contact-label">TikTok</span>
-          <span class="contact-val">@michaeldonoser</span>
-        </a>
-        <a href="https://medium.com/@michael.donoser" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-medium-logo"/></svg></div>
-          <span class="contact-label">Medium</span>
-          <span class="contact-val">@michael.donoser</span>
-        </a>
-        <a href="https://github.com/mike-dono-0815" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-github-logo"/></svg></div>
-          <span class="contact-label">GitHub</span>
-          <span class="contact-val">mike-dono-0815</span>
-        </a>
-        <a href="https://scholar.google.com/citations?user=zuYS1cQAAAAJ&hl=en" class="contact-card" target="_blank" rel="noopener">
-          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-graduation-cap"/></svg></div>
-          <span class="contact-label">Google Scholar</span>
-          <span class="contact-val">h-index 27</span>
-        </a>
-      </div>
-      <p class="contact-outro">Always happy to hear from fellow researchers, builders, and leaders.</p>
-    </div>
-  </section>
+<footer>
+  <div class="container">
+    <span>&copy; 2026 Michael Donoser, Ph.D. · Author of The Leadership Fork</span>
+    <span><a href="imprint.html">Imprint</a> · <a href="privacy.html">Privacy</a></span>
+  </div>
+</footer>
 
-  <!-- ── FOOTER ───────────────────────────────────────────────── -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Michael Donoser, Ph.D. &middot; Author of The Leadership Fork</p>
-      <p class="footer-note"><a href="imprint.html">Imprint</a> &middot; <a href="privacy.html">Privacy</a> &middot; Hosted on GitHub Pages</p>
-    </div>
-  </footer>
-
-  <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-  </a>
-
-  <script src="script.js"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var merge = document.getElementById('merge');
+  if (!reduce) merge.style.setProperty('--merge-dash', '400');
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    merge.style.setProperty('--merge-dash', '0');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (e.target === merge) merge.style.setProperty('--merge-dash', '0');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function (el, i) {
+    el.style.transitionDelay = (i % 3) * 60 + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
