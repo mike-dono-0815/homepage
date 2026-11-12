@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#1a2540"/>
-  <text x="32" y="45" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#c8920c" text-anchor="middle" letter-spacing="-1">MD</text>
+  <rect width="64" height="64" rx="14" fill="#E8AC20"/>
+  <g fill="#131209" transform="translate(-1 0)">
+    <path d="M9 44V20h6.5l5.5 12.5L26.5 20H33v24h-5.5V30.5l-4.3 9.5h-4.4l-4.3-9.5V44z"/>
+    <path fill-rule="evenodd" d="M36 20h7.5a12 12 0 0 1 0 24H36zm5.5 5.5v13h2a6.5 6.5 0 0 0 0-13z"/>
+  </g>
 </svg>
